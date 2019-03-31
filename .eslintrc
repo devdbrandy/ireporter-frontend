@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "extends": ["airbnb"],
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-underscore-dangle": "off",
+    "no-return-assign": "off"
+  }
+}
