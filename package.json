@@ -1,7 +1,7 @@
 {
   "name": "ireporter-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "A platform that encourages users (citizen) to bring any form of corruption to the notice of appropriate authorities and the general public",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack -p",
