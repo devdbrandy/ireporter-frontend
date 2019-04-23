@@ -2,12 +2,12 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 
-const About = () => (
+const Layout = ({ children }) => (
   <>
     <Header />
-    <h1>About Page</h1>
+    {children}
     <Footer />
   </>
 );
 
-export default About;
+export default Layout;
