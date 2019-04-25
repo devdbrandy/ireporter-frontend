@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Header';
-import Footer from '../Footer';
+// import Footer from '../Footer';
 
 const Layout = ({ children }) => (
   <>
     <Header />
     {children}
-    <Footer />
+    {/* TODO: fix issue with aligning <Footer /> */}
   </>
 );
 
