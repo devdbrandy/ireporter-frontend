@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrowseRecords /> renders without crashing given the required props 1`] = `
+<Fragment>
+  <Layout>
+    <div
+      className="container"
+    >
+      <main
+        className="row"
+        id="main"
+      >
+        <div
+          className="column"
+        >
+          <div
+            className="panel"
+          >
+            <div
+              className="panel--heading"
+            >
+              <h3>
+                Browse Reports
+              </h3>
+            </div>
+            <div
+              className="panel--body"
+            >
+              <div
+                className="records-list"
+              >
+                <div
+                  className="row"
+                />
+              </div>
+              <div
+                className="preload"
+              >
+                <div
+                  className="preloader hide"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </Layout>
+</Fragment>
+`;
