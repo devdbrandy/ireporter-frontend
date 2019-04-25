@@ -2,60 +2,60 @@ import { toast } from 'react-toastify';
 import typeGenerator from './typeGenerator';
 import makeRequest from '../../utils/request';
 
-export const loginType = typeGenerator('LOGIN');
+export const signUpType = typeGenerator('SIGNUP');
 
 /**
- * Action generator that is dispatched upon making login request
+ * Action generator that is dispatched upon making request
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
  */
-export const loginLoading = payload => ({
-  type: loginType.success,
+export const signUpLoading = payload => ({
+  type: signUpType.success,
   payload,
 });
 
 /**
- * Action generator that is dispatched upon successful login
+ * Action generator that is dispatched upon successfully clapping on article
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
  */
-export const loginSuccess = payload => ({
-  type: loginType.success,
+export const signUpSuccess = payload => ({
+  type: signUpType.success,
   payload,
 });
 
 /**
- * Action generator that is dispatched if there's login failure
+ * Action generator that is dispatched if there's failure clapping on article
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
  */
-export const loginFailure = payload => ({
-  type: loginType.failure,
+export const signUpFailure = payload => ({
+  type: signUpType.failure,
   payload,
 });
 
 /**
- * Handles user login
+ * Handles user signup
  *
  * @export
  * @param {object} token - The user payload
  * @returns {object} - Returns an actions object
  */
-export const loginUser = payload => async (dispatch) => {
-  dispatch(loginLoading(true));
+export const signUpUser = payload => async (dispatch) => {
+  dispatch(signUpLoading(true));
   try {
-    const response = await makeRequest('/auth/login', { method: 'POST', body: payload });
-    dispatch(loginSuccess(response.data.data[0]));
+    const response = await makeRequest('/auth/signup', { method: 'POST', body: payload });
+    dispatch(signUpSuccess(response.data.data[0]));
   } catch (error) {
     const errorObject = JSON.parse(JSON.stringify(error));
     const { response } = errorObject;
     if (response) {
       const responseError = response.data.error;
       toast.error(responseError);
-      dispatch(loginFailure(response.data.error));
+      dispatch(signUpFailure(responseError));
     }
   }
 };
