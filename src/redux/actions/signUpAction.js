@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import typeGenerator from './typeGenerator';
 import makeRequest from '../../utils/request';
 
@@ -52,7 +53,9 @@ export const signUpUser = payload => async (dispatch) => {
     const errorObject = JSON.parse(JSON.stringify(error));
     const { response } = errorObject;
     if (response) {
-      dispatch(signUpFailure(response.data.error));
+      const responseError = response.data.error;
+      toast.error(responseError);
+      dispatch(signUpFailure(responseError));
     }
   }
 };

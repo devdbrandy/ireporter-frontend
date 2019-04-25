@@ -13,13 +13,14 @@ export default (state = auth, { type, payload }) => {
     case loginType.success:
       return {
         ...state,
-        isAuth: !!payload.user,
-        user: payload.user
+        user: { ...payload.user },
+        token: payload.token,
+        isAuthenticated: !!payload.token
       };
     case loginType.failure:
       return {
         ...state,
-        errors: [...payload]
+        errors: [payload]
       };
     default:
       return state;
