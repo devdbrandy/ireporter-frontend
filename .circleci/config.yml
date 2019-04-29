@@ -1,0 +1,46 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+orbs:
+  # use Cypress orb from CircleCI registry
+  cypress: cypress-io/cypress@1.5.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.0-stretch
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+        keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+            
+      # install dependencies
+      - run: rm -rf node_modules
+      - run: npm install
+      - run: sudo apt-get update
+      - run: sudo apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 --fix-missing
+      - run:
+        name: Setup Code Climate test-reporter
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+
+      - save_cache:
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: # run tests
+        name: Run Test and Coverage
+        command: |
+          ./cc-test-reporter before-build
+          npm run test
+          ./cc-test-reporter after-build --exit-code $?
