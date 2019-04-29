@@ -18,7 +18,7 @@
     "build": "rimraf dist && webpack -p",
     "start": "node server.js",
     "dev": "webpack-dev-server  --open --hot",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
