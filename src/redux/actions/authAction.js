@@ -5,18 +5,18 @@ import makeRequest from '../../utils/request';
 export const loginType = typeGenerator('LOGIN');
 
 /**
- * Action generator that is dispatched upon making login request
+ * Action creator that is dispatched upon making login request
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
  */
 export const loginLoading = payload => ({
-  type: loginType.success,
+  type: loginType.loading,
   payload,
 });
 
 /**
- * Action generator that is dispatched upon successful login
+ * Action creator that is dispatched upon successful login
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
@@ -27,7 +27,7 @@ export const loginSuccess = payload => ({
 });
 
 /**
- * Action generator that is dispatched if there's login failure
+ * Action creator that is dispatched if there's login failure
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
@@ -41,8 +41,8 @@ export const loginFailure = payload => ({
  * Handles user login
  *
  * @export
- * @param {object} token - The user payload
- * @returns {object} - Returns an actions object
+ * @param {object} payload - The user payload
+ * @returns {void}
  */
 export const loginUser = payload => async (dispatch) => {
   dispatch(loginLoading(true));

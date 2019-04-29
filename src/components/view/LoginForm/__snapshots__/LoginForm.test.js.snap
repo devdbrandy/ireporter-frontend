@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> renders without crashing given the required props 1`] = `
+<Fragment>
+  <form
+    className="signin--form"
+    id="login-form"
+    onSubmit={[Function]}
+  >
+    <div>
+      <label
+        htmlFor="username"
+      >
+        Username
+        <div
+          className="input-wrapper"
+        >
+          <input
+            minLength="3"
+            name="username"
+            onChange={[Function]}
+            placeholder="Enter username"
+            required={true}
+            type="text"
+          />
+        </div>
+      </label>
+    </div>
+    <div>
+      <PasswordInput
+        handleOnChange={[Function]}
+        label="password"
+        labelText="Password"
+        minLength={null}
+        name="password"
+        pattern={null}
+        placeholder="Enter password"
+        title={null}
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+  <div
+    className="signin--links"
+  >
+    <a
+      href="#!"
+    >
+      Forgot Password
+    </a>
+  </div>
+</Fragment>
+`;

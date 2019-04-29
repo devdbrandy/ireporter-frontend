@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders without crashing given the required props 1`] = `
+<footer
+  className="main--footer"
+>
+  <div
+    className="footer--content"
+  >
+    <p
+      className="credit"
+    >
+      Made with
+       
+      <span>
+        <i
+          className="fas fa-heart"
+        />
+      </span>
+       
+      by
+       
+      <a
+        href="https://github.com/devdbrandy"
+      >
+        Dbrandy
+      </a>
+    </p>
+    <p>
+      Copyright ©
+       
+      <span
+        id="copyright-year"
+      >
+        2018
+      </span>
+       
+      iReporter. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+`;
