@@ -5,9 +5,9 @@ import makeRequest from '../../utils/request';
 export const loginType = typeGenerator('LOGIN');
 
 /**
- * Action creator that is dispatched upon making login request
+ * Action creator that is dispatched upon loading login request
  *
- * @param {object} payload - The user payload state
+ * @param {boolean} payload - The loading control state
  * @returns {object} - Returns an action object
  */
 export const loginLoading = payload => ({
@@ -29,7 +29,7 @@ export const loginSuccess = payload => ({
 /**
  * Action creator that is dispatched if there's login failure
  *
- * @param {object} payload - The user payload state
+ * @param {object} payload - The error object
  * @returns {object} - Returns an action object
  */
 export const loginFailure = payload => ({
@@ -41,7 +41,7 @@ export const loginFailure = payload => ({
  * Handles user login
  *
  * @export
- * @param {object} payload - The user payload
+ * @param {object} payload - The user creadentials
  * @returns {void}
  */
 export const loginUser = payload => async (dispatch) => {
@@ -55,7 +55,7 @@ export const loginUser = payload => async (dispatch) => {
     if (response) {
       const responseError = response.data.error;
       toast.error(responseError);
-      dispatch(loginFailure(response.data.error));
+      dispatch(loginFailure(responseError));
     }
   }
 };

@@ -1,57 +1,85 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropType from 'prop-types';
+import moment from 'moment';
 import Layout from '../Layout';
 
-const Profile = () => (
-  <>
-    <Layout>
-      <div class="container">
-        <main id="main">
-          <div class="column">
-            <div class="panel">
-              <div class="panel--heading">
-                <h3>Profile</h3>
-              </div>
-              <div class="panel--body">
-                <div class="user-profile row middle">
-                  <div class="user--avatar column center">
-                    <img src="img/avatar.jpg" alt="avatar" />
-                  </div>
-                  <div class="user--detail column center">
-                    <h3 />
-                    <a href="settings.html" class="btn btn-primary edit">Edit Profile</a>
-                    <hr class="dash" />
-                    <p class="user--bio">No bio provided.</p>
-                  </div>
-                  <div class="user--stat column center text-center">
-                    <div class="wrapper">
-                      <span>
-                        Joined:
+export const Profile = (props) => {
+  const {
+    user: {
+      firstname,
+      lastname,
+      bio,
+      avatar,
+      registered,
+    }
+  } = props;
+  const joinDate = moment(registered).format('MMM Do, YYYY');
+  return (
+    <>
+      <Layout>
+        <div className="container">
+          <main id="main">
+            <div className="column">
+              <div className="panel">
+                <div className="panel--heading">
+                  <h3>Profile</h3>
+                </div>
+                <div className="panel--body">
+                  <div className="user-profile row middle">
+                    <div className="user--avatar column center">
+                      <img src={avatar} alt="avatar" />
+                    </div>
+                    <div className="user--detail column center">
+                      <h3>
+                        {firstname}
                         {' '}
-                        <i class="user--registered">Dec 3, 2018</i>
-                      </span>
-                      <hr class="dash" />
-                      <span>
-                        <i class="incident-total">0</i>
-                        Incidents Published
-                      </span>
-                      <span>
-                        <i class="incident-resolved">0</i>
-                        Incidents Resolved
-                      </span>
-                      <span>
-                        <i class="incident-rejected">0</i>
-                        Incidents Rejected
-                      </span>
+                        {lastname}
+                      </h3>
+                      <Link to="/settings" className="btn btn-primary edit">Edit Profile</Link>
+                      <hr className="dash" />
+                      <p className="user--bio">{bio || 'No bio provided.'}</p>
+                    </div>
+                    <div className="user--stat column center text-center">
+                      <div className="wrapper">
+                        <span>
+                          Joined:
+                          {' '}
+                          <i className="user--registered">{joinDate}</i>
+                        </span>
+                        <hr className="dash" />
+                        <span>
+                          <i className="incident-total">0</i>
+                          Incidents Published
+                        </span>
+                        <span>
+                          <i className="incident-resolved">0</i>
+                          Incidents Resolved
+                        </span>
+                        <span>
+                          <i className="incident-rejected">0</i>
+                          Incidents Rejected
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </main>
-      </div>
-    </Layout>
-  </>
-);
+          </main>
+        </div>
+      </Layout>
+    </>
+  )
+};
 
-export default Profile;
+Profile.propTypes = {
+  user: PropType.object.isRequired,
+};
+
+const mapStateToProps = state => ({
+  user: state.auth.user,
+});
+
+export default connect(mapStateToProps)(Profile);
