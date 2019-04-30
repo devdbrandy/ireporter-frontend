@@ -5,6 +5,7 @@ import Signin from '../components/container/SigninPage';
 import Dashboard from '../components/view/Dashboard';
 import ProfileComponent from '../components/view/Profile';
 import Settings from '../components/view/Settings';
+import NewRecord from '../components/view/NewRecord';
 import BrowseRecords from '../components/view/BrowseRecords';
 import ProtectedRoute from '../components/container/ProtectedRoute';
 
@@ -16,6 +17,7 @@ const Routes = () => (
       <ProtectedRoute path="/dashboard" component={Dashboard} />
       <ProtectedRoute path="/profile" component={ProfileComponent} />
       <ProtectedRoute path="/settings" component={Settings} />
+      <ProtectedRoute path="/new/record" component={NewRecord} />
       <Route path="/settings" component={Settings} />
       <Route path="/browse" component={BrowseRecords} />
     </Switch>

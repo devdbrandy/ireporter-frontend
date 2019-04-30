@@ -6,4 +6,8 @@ export default {
     isLoading: false,
     errors: [],
   },
+  global: {
+    isLoading: false,
+    error: [],
+  }
 };
