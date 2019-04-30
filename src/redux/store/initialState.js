@@ -6,7 +6,8 @@ export default {
     isLoading: false,
     errors: [],
   },
-  global: {
+  common: {
+    appName: '',
     isLoading: false,
     error: [],
   }

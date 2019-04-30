@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import makeRequest from '../../utils/request';
 import exceptionHandler from '../../utils/exceptionHandler';
-import { globalLoading, globalFailure } from './globalAction';
+import { commonLoading, commonFailure } from './commonAction';
 
 /**
  * Handles record creation
@@ -12,7 +12,7 @@ import { globalLoading, globalFailure } from './globalAction';
  * @returns {void}
  */
 const createRecordAction = (type, body) => async (dispatch) => {
-  dispatch(globalLoading(true));
+  dispatch(commonLoading(true));
   try {
     const response = await makeRequest(`/api/v1/${type}`, {
       method: 'POST',
@@ -20,10 +20,10 @@ const createRecordAction = (type, body) => async (dispatch) => {
     });
     const { message } = response.data.data[0];
     toast.success(message);
-    dispatch(globalLoading(false));
+    dispatch(commonLoading(false));
   } catch (error) {
     const errorResponse = exceptionHandler(error);
-    dispatch(globalFailure(errorResponse));
+    dispatch(commonFailure(errorResponse));
   }
 };
 

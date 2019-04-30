@@ -1,6 +1,6 @@
 import typeGenerator from './typeGenerator';
 
-export const globalType = typeGenerator('GLOBAL');
+export const commonType = typeGenerator('COMMON');
 
 /**
  * Action creator that is dispatched when there's a loading state
@@ -8,8 +8,8 @@ export const globalType = typeGenerator('GLOBAL');
  * @param {boolean} payload - The loading controle state
  * @returns {object} - Returns an action object
  */
-export const globalLoading = payload => ({
-  type: globalType.loading,
+export const commonLoading = payload => ({
+  type: commonType.loading,
   payload,
 });
 
@@ -19,7 +19,7 @@ export const globalLoading = payload => ({
  * @param {object|Array} payload - The error object
  * @returns {object} - Returns an action object
  */
-export const globalFailure = payload => ({
-  type: globalType.failure,
+export const commonFailure = payload => ({
+  type: commonType.failure,
   payload,
 });

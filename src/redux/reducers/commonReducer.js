@@ -1,16 +1,16 @@
 import initialState from '../store/initialState';
-import { globalType } from '../actions/globalAction';
+import { commonType } from '../actions/commonAction';
 
-const { global } = initialState;
+const { common } = initialState;
 
-export default (state = global, { type, payload }) => {
+export default (state = common, { type, payload }) => {
   switch (type) {
-    case globalType.loading:
+    case commonType.loading:
       return {
         ...state,
         isLoading: payload
       };
-    case globalType.failure:
+    case commonType.failure:
       return {
         ...state,
         errors: [...payload],
