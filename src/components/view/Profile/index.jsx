@@ -71,7 +71,7 @@ export const Profile = (props) => {
         </div>
       </Layout>
     </>
-  )
+  );
 };
 
 Profile.propTypes = {

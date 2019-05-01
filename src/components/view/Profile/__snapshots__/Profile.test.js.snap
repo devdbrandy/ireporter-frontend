@@ -4,78 +4,79 @@ exports[`<Profile /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
     <div
-      class="container"
+      className="container"
     >
       <main
         id="main"
       >
         <div
-          class="column"
+          className="column"
         >
           <div
-            class="panel"
+            className="panel"
           >
             <div
-              class="panel--heading"
+              className="panel--heading"
             >
               <h3>
                 Profile
               </h3>
             </div>
             <div
-              class="panel--body"
+              className="panel--body"
             >
               <div
-                class="user-profile row middle"
+                className="user-profile row middle"
               >
                 <div
-                  class="user--avatar column center"
+                  className="user--avatar column center"
                 >
                   <img
                     alt="avatar"
-                    src="img/avatar.jpg"
                   />
                 </div>
                 <div
-                  class="user--detail column center"
+                  className="user--detail column center"
                 >
-                  <h3 />
-                  <a
-                    class="btn btn-primary edit"
-                    href="settings.html"
+                  <h3>
+                     
+                  </h3>
+                  <Link
+                    className="btn btn-primary edit"
+                    to="/settings"
                   >
                     Edit Profile
-                  </a>
+                  </Link>
                   <hr
-                    class="dash"
+                    className="dash"
                   />
                   <p
-                    class="user--bio"
+                    className="user--bio"
                   >
                     No bio provided.
                   </p>
                 </div>
                 <div
-                  class="user--stat column center text-center"
+                  className="user--stat column center text-center"
                 >
                   <div
-                    class="wrapper"
+                    className="wrapper"
                   >
                     <span>
                       Joined:
                        
                       <i
-                        class="user--registered"
+                        className="user--registered"
                       >
-                        Dec 3, 2018
+                        May 1st, 2019
                       </i>
                     </span>
                     <hr
-                      class="dash"
+                      className="dash"
                     />
                     <span>
                       <i
-                        class="incident-total"
+                        className="incident-total"
                       >
                         0
                       </i>
@@ -83,7 +84,7 @@ exports[`<Profile /> renders without crashing given the required props 1`] = `
                     </span>
                     <span>
                       <i
-                        class="incident-resolved"
+                        className="incident-resolved"
                       >
                         0
                       </i>
@@ -91,7 +92,7 @@ exports[`<Profile /> renders without crashing given the required props 1`] = `
                     </span>
                     <span>
                       <i
-                        class="incident-rejected"
+                        className="incident-rejected"
                       >
                         0
                       </i>

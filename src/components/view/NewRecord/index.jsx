@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Layout from '../Layout';
 import createRecordAction from '../../../redux/actions/createRecordAction';
 
-const NewRecord = (props) => {
+export const NewRecord = (props) => {
   const initialState = {
     type: 'red-flags',
     title: '',

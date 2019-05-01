@@ -47,7 +47,7 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
             </Link>
             <Link
               className="btn btn-secondary add-button"
-              to="/"
+              to="/new/record"
             >
               <i
                 className="fas fa-plus"
@@ -71,6 +71,7 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
               </a>
               <div
                 className="dropdown"
+                onClick={[Function]}
               >
                 <a
                   href="#!"
@@ -81,20 +82,19 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
                   />
                 </a>
                 <div
-                  className="dropdown--menu"
+                  className="dropdown--menu "
                 >
                   <span>
                     Account
                   </span>
-                  <a
-                    href="#!"
-                    id="dashboard-link"
+                  <Link
+                    to="/dashboard"
                   >
                     <i
                       className="fas fa-tachometer-alt"
                     />
                     Dashboard
-                  </a>
+                  </Link>
                   <Link
                     to="/profile"
                   >
@@ -126,7 +126,8 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
                     <span
                       className="username"
                     >
-                      (dbrandy)
+                      (
+                      )
                     </span>
                   </a>
                 </div>

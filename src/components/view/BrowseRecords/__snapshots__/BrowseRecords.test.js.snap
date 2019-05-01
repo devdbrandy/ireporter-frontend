@@ -3,48 +3,19 @@
 exports[`<BrowseRecords /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
-    <div
-      className="container"
+    <withRouter(Panel)
+      title="Browse Records"
     >
-      <main
-        className="row"
-        id="main"
+      <div
+        className="records-list"
       >
         <div
-          className="column"
+          className="row"
         >
-          <div
-            className="panel"
-          >
-            <div
-              className="panel--heading"
-            >
-              <h3>
-                Browse Reports
-              </h3>
-            </div>
-            <div
-              className="panel--body"
-            >
-              <div
-                className="records-list"
-              >
-                <div
-                  className="row"
-                />
-              </div>
-              <div
-                className="preload"
-              >
-                <div
-                  className="preloader hide"
-                />
-              </div>
-            </div>
-          </div>
+          <Record />
         </div>
-      </main>
-    </div>
+      </div>
+    </withRouter(Panel)>
   </Layout>
 </Fragment>
 `;

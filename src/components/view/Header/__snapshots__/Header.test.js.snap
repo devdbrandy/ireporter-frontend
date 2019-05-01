@@ -2,6 +2,6 @@
 
 exports[`<Header /> renders without crashing given the required props 1`] = `
 <Fragment>
-  <NavBar />
+  <ConnectFunction />
 </Fragment>
 `;

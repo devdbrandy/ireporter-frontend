@@ -28,7 +28,7 @@ const customStyles = {
  * @param {object} props - The props object
  * @returns {JSX.Element} DOM Element
  */
-const Dashboard = (props) => {
+export const Dashboard = (props) => {
   const { fetchRecords, userId, records } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
