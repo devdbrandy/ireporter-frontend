@@ -1,8 +1,30 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-first-prop-new-line */
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from 'react-places-autocomplete';
 import Layout from '../Layout';
 import createRecordAction from '../../../redux/actions/createRecordAction';
+import CloudinaryWidget from '../../container/CloudinaryWidget';
+import { logger } from '../../../utils/helper';
+
+let widget;
+
+const suggestionStyle = {
+  backgroundColor: '#ffffff',
+  cursor: 'pointer',
+  padding: '1em',
+  fontSize: '1.2em',
+};
+
+const activeSuggestionStyle = {
+  ...suggestionStyle,
+  backgroundColor: '#fafafa',
+};
 
 export const NewRecord = (props) => {
   const initialState = {
@@ -12,21 +34,86 @@ export const NewRecord = (props) => {
     location: '',
     status: 'draft',
     media: [],
+    address: '',
   };
   const [formData, setFormData] = useState(initialState);
 
-  const handleFieldChange = (e) => {
+  /**
+   * Handles input field change
+   *
+   * @param {Event} event - The Event object
+   * @returns {void}
+   */
+  const handleFieldChange = (event) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
+  /**
+   * Handles location input change
+   *
+   * @param {string} address - The location's address
+   * @returns {void}
+   */
+  const handleChange = (address) => {
+    setFormData({
+      ...formData,
+      address,
+    });
+  };
+
+  /**
+   * Handles suggested location selection
+   *
+   * @param {string} address - The suggested address
+   * @returns {void}
+   */
+  const handleSelect = (address) => {
+    geocodeByAddress(address)
+      .then(results => getLatLng(results[0]))
+      .then((latLng) => {
+        const location = `${latLng.lat},${latLng.lng}`;
+        setFormData({ ...formData, location, address });
+      })
+      .catch(error => logger.error(error));
+  };
+
+  /**
+   * Handles form submission
+   *
+   * @param {Event} event - The Event object
+   * @returns {void}
+   */
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const { createRecord } = props;
     const { type } = formData;
     createRecord(type, formData);
+  };
+
+  /**
+   * Collect the uploaded media url
+   *
+   * @param {string} image - The image url
+   * @returns {void}
+   */
+  const collectMediaUpload = (image) => {
+    formData.media.push(image);
+    setFormData({ ...formData });
+  };
+
+  /**
+   * Activate cloudinary upload widget
+   *
+   * @returns {void}
+   */
+  const handleMediaUpload = () => {
+    if (widget === undefined) {
+      widget = new CloudinaryWidget(collectMediaUpload, () => {}, false);
+    }
+    widget.open();
   };
 
   return (
@@ -106,17 +193,57 @@ export const NewRecord = (props) => {
                       <div className="col-2">
                         <label htmlFor="geoautocomplete">Location</label>
                       </div>
-                      <div className="col-10">
+                      <PlacesAutocomplete
+                        value={formData.address}
+                        onChange={handleChange}
+                        onSelect={handleSelect}
+                      >
+                        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                          <div>
+                            <input
+                              {...getInputProps({
+                                placeholder: 'Search Places ...',
+                                className: 'location-search-input',
+                                name: 'address'
+                              })}
+                            />
+                            <div className="autocomplete-dropdown-container"
+                              style={{ border: suggestions.length ? '1px solid #ccc' : '' }}>
+                              {loading && <div><i className="fas fa-spinner fa-spin fa-lg" /></div>}
+                              {suggestions.map((suggestion, index) => {
+                                const className = suggestion.active
+                                  ? 'suggestion-item--active'
+                                  : 'suggestion-item';
+                                // inline style for demonstration purpose
+                                const style = suggestion.active
+                                  ? activeSuggestionStyle
+                                  : suggestionStyle;
+                                return (
+                                  <div key={index}
+                                    {...getSuggestionItemProps((suggestion), {
+                                      className,
+                                      style,
+                                    })}
+                                  >
+                                    <span>{suggestion.description}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                      </PlacesAutocomplete>
+                      {/* <div className="col-10">
                         <input type="text" name="geoautocomplete" id="geoautocomplete" placeholder="Enter incident location" />
                         <input type="hidden" name="location" id="location" />
-                      </div>
+                      </div> */}
                     </div>
                     <div className="form-control">
                       <div className="col-2" />
                       <div className="col-10">
                         <div className="upload-btn-wrapper">
                           <label>
-                            <button id="upload-widget" className="cloudinary-button" type="button">
+                            <button id="upload-widget" className="cloudinary-button" type="button" onClick={handleMediaUpload}>
                               <i className="fas fa-paperclip" />
                             </button>
                             <input type="hidden" name="media" id="media" value="[]" />
