@@ -357,10 +357,10 @@ label {
 }
 
 .modal--content {
-  width: 90%;
+  width: 100%;
   background-color: #fefefe;
   font-size: 9px;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .modal--header {

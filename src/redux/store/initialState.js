@@ -10,5 +10,10 @@ export default {
     appName: '',
     isLoading: false,
     error: [],
-  }
+  },
+  records: {
+    userRecords: [],
+    records: [],
+    record: {},
+  },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../Header';
-// import Footer from '../Footer';
 
 const Layout = ({ children }) => (
   <>
@@ -9,5 +9,12 @@ const Layout = ({ children }) => (
     {/* TODO: fix issue with aligning <Footer /> */}
   </>
 );
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object
+  ]).isRequired,
+};
 
 export default Layout;
