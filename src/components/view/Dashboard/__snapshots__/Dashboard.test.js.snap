@@ -3,131 +3,219 @@
 exports[`<Dashboard /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
-    <div
-      className="container"
+    <withRouter(Panel)
+      title="Dashboard"
     >
-      <main
-        id="main"
+      <div
+        className="overview"
       >
         <div
-          className="column"
+          className="row"
         >
           <div
-            className="panel"
+            className="card"
+          >
+            <span
+              className="count"
+              id="total-records"
+            >
+              0
+            </span>
+            <h5>
+              Total Records
+            </h5>
+          </div>
+          <div
+            className="card"
+          >
+            <span
+              className="count"
+              id="investigation-count"
+            >
+              0
+            </span>
+            <h5>
+              Under investigation
+            </h5>
+          </div>
+          <div
+            className="card"
+          >
+            <span
+              className="count"
+              id="resolved-count"
+            >
+              0
+            </span>
+            <h5>
+              Resolved
+            </h5>
+          </div>
+          <div
+            className="card"
+          >
+            <span
+              className="count"
+              id="rejected-count"
+            >
+              0
+            </span>
+            <h5>
+              Rejected
+            </h5>
+          </div>
+        </div>
+      </div>
+      <hr
+        className="dash"
+      />
+      <div
+        className="responsive-table"
+      >
+        <table
+          id="records-table"
+        >
+          <thead>
+            <tr>
+              <th>
+                Title
+              </th>
+              <th>
+                Type
+              </th>
+              <th>
+                Created On
+              </th>
+              <th>
+                Status
+              </th>
+              <th />
+            </tr>
+          </thead>
+          <tbody
+            id="record-list"
+          />
+        </table>
+      </div>
+      <div
+        className="preload"
+      >
+        <div
+          className="preloader hide"
+        />
+      </div>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        contentLabel=""
+        isOpen={false}
+        onRequestClose={[Function]}
+        parentSelector={[MockFunction]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "bottom": "auto",
+              "left": "50%",
+              "marginRight": "-50%",
+              "minWidth": "50%",
+              "padding": "0",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <div
+          className="modal--content"
+        >
+          <header
+            className="modal--label"
+          >
+            <h3>
+              Record information
+            </h3>
+            <span
+              className="modal-close"
+            >
+              <i
+                className="fas fa-times"
+              />
+            </span>
+          </header>
+          <div
+            className="modal--body"
           >
             <div
-              className="panel--heading"
+              id="map"
+            />
+            <span
+              className="location"
             >
-              <h3>
-                Manage Records
-              </h3>
-            </div>
-            <div
-              className="panel--body"
-            >
-              <div
-                className="overview"
-              >
-                <div
-                  className="row"
-                >
-                  <div
-                    className="card"
-                  >
-                    <span
-                      className="count"
-                      id="total-records"
-                    >
-                      0
-                    </span>
-                    <h5>
-                      Total Records
-                    </h5>
-                  </div>
-                  <div
-                    className="card"
-                  >
-                    <span
-                      className="count"
-                      id="investigation-count"
-                    >
-                      0
-                    </span>
-                    <h5>
-                      Under investigation
-                    </h5>
-                  </div>
-                  <div
-                    className="card"
-                  >
-                    <span
-                      className="count"
-                      id="resolved-count"
-                    >
-                      0
-                    </span>
-                    <h5>
-                      Resolved
-                    </h5>
-                  </div>
-                  <div
-                    className="card"
-                  >
-                    <span
-                      className="count"
-                      id="rejected-count"
-                    >
-                      0
-                    </span>
-                    <h5>
-                      Rejected
-                    </h5>
-                  </div>
-                </div>
-              </div>
-              <hr
-                className="dash"
+              <i
+                className="fas fa-map-marker-alt"
               />
+               
+              <span
+                className="text"
+              />
+            </span>
+            <div
+              className="title"
+            >
+              <h4 />
+            </div>
+            <p
+              className="comment mt-10"
+            />
+            <div
+              className="media"
+            >
+              <h6>
+                Media
+              </h6>
               <div
-                className="responsive-table"
-              >
-                <table
-                  id="records-table"
-                >
-                  <thead>
-                    <tr>
-                      <th>
-                        Title
-                      </th>
-                      <th>
-                        Type
-                      </th>
-                      <th>
-                        Created On
-                      </th>
-                      <th>
-                        Status
-                      </th>
-                      <th />
-                    </tr>
-                  </thead>
-                  <tbody
-                    id="record-list"
-                  />
-                </table>
-              </div>
-              <div
-                className="preload"
+                className="row gallery"
               >
                 <div
-                  className="preloader hide"
+                  className="col-20 tabs"
                 />
+                <div
+                  className="col-80 preview"
+                >
+                  <img
+                    alt="preview"
+                    id="previewed-img"
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <footer
+            className="modal--footer"
+          >
+            <div
+              className="wrapper"
+            >
+              <button
+                className="btn btn-primary cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                close
+              </button>
+            </div>
+          </footer>
         </div>
-      </main>
-    </div>
+      </Modal>
+    </withRouter(Panel)>
   </Layout>
 </Fragment>
 `;
