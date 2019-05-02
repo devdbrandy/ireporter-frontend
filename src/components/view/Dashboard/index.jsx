@@ -1,11 +1,14 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 import Layout from '../Layout';
 import Panel from '../Panel';
 import { fetchUserRecords } from '../../../redux/actions/recordsAction';
 import formatDate from '../../../utils/formatDate';
+import lookupAddress from '../../../utils/lookupAddress';
 
 Modal.setAppElement('#root');
 
@@ -18,7 +21,7 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     padding: '0',
-    minWidth: '50%',
+    minWidth: '60%',
   }
 };
 
@@ -65,6 +68,34 @@ export const Dashboard = (props) => {
    */
   const closeModal = () => {
     setState({ ...state, modalIsOpen: false });
+  };
+
+  /**
+   * Runs after modal opens
+   *
+   * @returns {void}
+   */
+  const afterModalOpen = async () => {
+    const { article: { location } } = state;
+    const [lat, lng] = location.split(',');
+    const latLng = {
+      lat: parseFloat(lat),
+      lng: parseFloat(lng),
+    };
+    const mapContainer = document.getElementById('map');
+    // eslint-disable-next-line no-unused-vars
+    const map = new google.maps.Map(mapContainer, {
+      center: latLng,
+      zoom: 13,
+    });
+    const address = await lookupAddress(location);
+    setState({
+      ...state,
+      article: {
+        ...state.article,
+        address,
+      },
+    });
   };
 
   return (
@@ -121,10 +152,10 @@ export const Dashboard = (props) => {
                           <i className="far fa-eye" />
                           View
                         </button>
-                        <a href="#!" className="btn btn-success action-btn edit">
+                        <Link to={`/edit/record/${record.id}`} className="btn btn-success action-btn edit">
                           <i className="far fa-edit" />
                           <span className="text">Edit</span>
-                        </a>
+                        </Link>
                         <button type="button" className="btn btn-danger action-btn delete">
                           <i className="far fa-trash-alt" />
                           <span className="text">Delete</span>
@@ -143,9 +174,9 @@ export const Dashboard = (props) => {
 
           {/* TODO: Add pagination */}
 
-
           <Modal
             isOpen={state.modalIsOpen}
+            onAfterOpen={afterModalOpen}
             onRequestClose={closeModal}
             style={customStyles}
             contentLabel=""
@@ -153,16 +184,13 @@ export const Dashboard = (props) => {
             <div className="modal--content">
               <header className="modal--label">
                 <h3>Record information</h3>
-                <span className="modal-close">
-                  <i className="fas fa-times" />
-                </span>
               </header>
               <div className="modal--body">
                 <div id="map" />
                 <span className="location">
                   <i className="fas fa-map-marker-alt" />
                   {' '}
-                  <span className="text" />
+                  <span className="text">{state.article.address}</span>
                 </span>
                 <div className="title">
                   <h4>{state.article.title || ''}</h4>
@@ -171,9 +199,14 @@ export const Dashboard = (props) => {
                 <div className="media">
                   <h6>Media</h6>
                   <div className="row gallery">
-                    <div className="col-20 tabs" />
-                    <div className="col-80 preview">
-                      <img id="previewed-img" alt="preview" />
+                    <div className="col-20 tabs">
+                      {state.article.images ? (
+                        state.article.images.map((image, index) => (
+                          <div key={index}>
+                            <img src={image} alt="preview" />
+                          </div>
+                        ))
+                      ) : 'No media available'}
                     </div>
                   </div>
                 </div>

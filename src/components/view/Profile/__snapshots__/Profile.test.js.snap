@@ -68,7 +68,7 @@ exports[`<Profile /> renders without crashing given the required props 1`] = `
                       <i
                         className="user--registered"
                       >
-                        May 1st, 2019
+                        May 2nd, 2019
                       </i>
                     </span>
                     <hr

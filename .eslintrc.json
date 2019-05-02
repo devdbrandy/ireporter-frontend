@@ -23,6 +23,9 @@
     "jquery": true,
     "jest": true
   },
+  "globals": {
+    "google": true
+  },
   "rules": {
     "one-var": 0,
     "one-var-declaration-per-line": 0,

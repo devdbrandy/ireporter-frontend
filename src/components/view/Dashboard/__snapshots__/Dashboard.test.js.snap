@@ -110,6 +110,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
         closeTimeoutMS={0}
         contentLabel=""
         isOpen={false}
+        onAfterOpen={[Function]}
         onRequestClose={[Function]}
         parentSelector={[MockFunction]}
         portalClassName="ReactModalPortal"
@@ -124,7 +125,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
               "bottom": "auto",
               "left": "50%",
               "marginRight": "-50%",
-              "minWidth": "50%",
+              "minWidth": "60%",
               "padding": "0",
               "right": "auto",
               "top": "50%",
@@ -142,13 +143,6 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
             <h3>
               Record information
             </h3>
-            <span
-              className="modal-close"
-            >
-              <i
-                className="fas fa-times"
-              />
-            </span>
           </header>
           <div
             className="modal--body"
@@ -186,14 +180,8 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
               >
                 <div
                   className="col-20 tabs"
-                />
-                <div
-                  className="col-80 preview"
                 >
-                  <img
-                    alt="preview"
-                    id="previewed-img"
-                  />
+                  No media available
                 </div>
               </div>
             </div>

@@ -852,6 +852,10 @@ span.location {
 /* ----- END RECORDS LISTING ----- */
 
 /* ----- RECORD MODAL VIEW ----- */
+.modal--label {
+  margin: 1rem 0 0 2rem;
+}
+
 .modal--body .title {
   margin: 1rem 0;
   border-bottom: 1px solid var(--gray80);

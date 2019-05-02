@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-first-prop-new-line */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropType from 'prop-types';
 import { connect } from 'react-redux';
 import PlacesAutocomplete, {
@@ -8,7 +8,7 @@ import PlacesAutocomplete, {
   getLatLng,
 } from 'react-places-autocomplete';
 import Layout from '../Layout';
-import { createRecordAction } from '../../../redux/actions/recordAction';
+import { updateRecordAction } from '../../../redux/actions/recordAction';
 import CloudinaryWidget from '../../container/CloudinaryWidget';
 import { logger } from '../../../utils/helper';
 
@@ -26,7 +26,7 @@ const activeSuggestionStyle = {
   backgroundColor: '#fafafa',
 };
 
-export const NewRecord = (props) => {
+export const EditRecord = (props) => {
   const initialState = {
     type: 'red-flags',
     title: '',
@@ -36,8 +36,25 @@ export const NewRecord = (props) => {
     media: [],
     address: '',
     mediaList: [],
+    fetchRecord: false,
   };
-  const [formData, setFormData] = useState(initialState);
+  const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    const { fetchRecord } = state;
+    if (!fetchRecord) {
+      const {
+        match: { params: { id } },
+        userRecords,
+      } = props;
+      const record = userRecords.find(item => item.id === parseInt(id, 10));
+      setState({
+        ...state,
+        ...record,
+        fetchRecord: true
+      });
+    }
+  });
 
   /**
    * Handles input field change
@@ -46,8 +63,8 @@ export const NewRecord = (props) => {
    * @returns {void}
    */
   const handleFieldChange = (event) => {
-    setFormData({
-      ...formData,
+    setState({
+      ...state,
       [event.target.name]: event.target.value,
     });
   };
@@ -59,8 +76,8 @@ export const NewRecord = (props) => {
    * @returns {void}
    */
   const handleChange = (address) => {
-    setFormData({
-      ...formData,
+    setState({
+      ...state,
       address,
     });
   };
@@ -76,7 +93,7 @@ export const NewRecord = (props) => {
       .then(results => getLatLng(results[0]))
       .then(({ lat, lng }) => {
         const location = `${lat},${lng}`;
-        setFormData({ ...formData, location, address });
+        setState({ ...state, location, address });
       })
       .catch(error => logger.error(error));
   };
@@ -89,9 +106,9 @@ export const NewRecord = (props) => {
    */
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const { createRecord } = props;
-    const { type } = formData;
-    createRecord(type, formData);
+    const { updateRecord } = props;
+    const { type, id } = state;
+    updateRecord(type, id, state);
   };
 
   /**
@@ -102,9 +119,9 @@ export const NewRecord = (props) => {
    * @returns {void}
    */
   const collectMediaUpload = (image, filename) => {
-    formData.media.push(image);
-    formData.mediaList.push(filename);
-    setFormData({ ...formData });
+    state.media.push(image);
+    state.mediaList.push(filename);
+    setState({ ...state });
   };
 
   /**
@@ -148,7 +165,7 @@ export const NewRecord = (props) => {
                             type="radio"
                             name="type"
                             value="red-flags"
-                            checked={formData.type === 'red-flags'}
+                            checked={state.type === 'red-flag'}
                             onChange={event => handleFieldChange(event)}
                           />
                           Red Flag
@@ -158,7 +175,7 @@ export const NewRecord = (props) => {
                             type="radio"
                             name="type"
                             value="interventions"
-                            checked={formData.type === 'interventions'}
+                            checked={state.type === 'intervention'}
                             onChange={event => handleFieldChange(event)}
                           />
                           Intervention
@@ -175,6 +192,7 @@ export const NewRecord = (props) => {
                           name="title"
                           placeholder="Enter a short title"
                           id="title"
+                          value={state.title}
                           onChange={event => handleFieldChange(event)}
                         />
                       </div>
@@ -188,6 +206,7 @@ export const NewRecord = (props) => {
                           name="comment"
                           placeholder="Enter record comment"
                           id="comment"
+                          value={state.comment}
                           onChange={event => handleFieldChange(event)}
                         />
                       </div>
@@ -197,7 +216,7 @@ export const NewRecord = (props) => {
                         <label htmlFor="geoautocomplete">Location</label>
                       </div>
                       <PlacesAutocomplete
-                        value={formData.address}
+                        value={state.address}
                         onChange={handleChange}
                         onSelect={handleSelect}
                       >
@@ -212,7 +231,7 @@ export const NewRecord = (props) => {
                               {...getInputProps({
                                 placeholder: 'Enter event location ...',
                                 className: 'location-search-input',
-                                name: 'address'
+                                name: 'address',
                               })}
                             />
                             <div className="autocomplete-dropdown-container"
@@ -255,8 +274,8 @@ export const NewRecord = (props) => {
                           </label>
                         </div>
                         <ul className="media-list">
-                          {formData.mediaList ? (
-                            formData.mediaList.map((filename, index) => (
+                          {state.mediaList ? (
+                            state.mediaList.map((filename, index) => (
                               <li key={index}>{filename}</li>
                             ))
                           ) : ''}
@@ -273,7 +292,7 @@ export const NewRecord = (props) => {
                             type="radio"
                             name="status"
                             value="draft"
-                            checked={formData.status === 'draft'}
+                            checked={state.status === 'draft'}
                             onChange={event => handleFieldChange(event)}
                           />
                           Draft
@@ -283,7 +302,7 @@ export const NewRecord = (props) => {
                             type="radio"
                             name="status"
                             value="published"
-                            checked={formData.status === 'published'}
+                            checked={state.status === 'published'}
                             onChange={event => handleFieldChange(event)}
                           />
                           Publish
@@ -292,7 +311,7 @@ export const NewRecord = (props) => {
                     </div>
 
                     <div className="row end mt-60">
-                      <button type="submit" className="btn btn-primary">Create record</button>
+                      <button type="submit" className="btn btn-primary">Update record</button>
                     </div>
                   </form>
                 </div>
@@ -305,12 +324,17 @@ export const NewRecord = (props) => {
   );
 };
 
-NewRecord.propTypes = {
-  createRecord: PropType.func.isRequired,
+EditRecord.propTypes = {
+  updateRecord: PropType.func.isRequired,
+  userRecords: PropType.array.isRequired,
 };
 
-const mapDispatchToProps = ({
-  createRecord: (type, payload) => createRecordAction(type, payload),
+const mapStateToProps = state => ({
+  userRecords: state.records.userRecords,
 });
 
-export default connect(null, mapDispatchToProps)(NewRecord);
+const mapDispatchToProps = ({
+  updateRecord: (type, id, payload) => updateRecordAction(type, id, payload),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditRecord);

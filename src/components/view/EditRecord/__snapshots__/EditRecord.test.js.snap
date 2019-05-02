@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<NewRecord /> renders without crashing given the required props 1`] = `
+exports[`<EditRecord /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
     <div
@@ -66,7 +66,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                   >
                     <label>
                       <input
-                        checked={true}
+                        checked={false}
                         name="type"
                         onChange={[Function]}
                         type="radio"
@@ -107,6 +107,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                       onChange={[Function]}
                       placeholder="Enter a short title"
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -130,6 +131,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                       name="comment"
                       onChange={[Function]}
                       placeholder="Enter record comment"
+                      value=""
                     />
                   </div>
                 </div>
@@ -242,7 +244,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                     className="btn btn-primary"
                     type="submit"
                   >
-                    Create record
+                    Update record
                   </button>
                 </div>
               </form>
