@@ -19,7 +19,7 @@ const headerSizeSm = {
   fontSize: '2.6em',
 };
 
-const Signin = (props) => {
+export const SigninPage = (props) => {
   const [showSignup, setShowSignup] = useState(false);
 
   const handleFormSwap = () => setShowSignup(!showSignup);
@@ -88,7 +88,7 @@ const Signin = (props) => {
   );
 };
 
-Signin.propTypes = {
+SigninPage.propTypes = {
   handleLogin: PropType.func.isRequired,
   handleSignUp: PropType.func.isRequired,
   isAuthenticated: PropType.bool.isRequired,
@@ -103,4 +103,4 @@ const mapDispatchToProps = {
   handleSignUp: payload => signUpUser(payload),
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signin);
+export default connect(mapStateToProps, mapDispatchToProps)(SigninPage);
