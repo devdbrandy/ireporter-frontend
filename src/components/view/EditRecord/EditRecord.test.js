@@ -10,6 +10,8 @@ import { EditRecord } from './index';
 const setup = () => {
   const props = {
     createRecord: {},
+    userRecords: [],
+    updateRecord: jest.fn(),
   };
 
   const component = shallow(<EditRecord {...props} />);

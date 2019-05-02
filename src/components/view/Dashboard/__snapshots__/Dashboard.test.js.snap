@@ -179,7 +179,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
                 className="row gallery"
               >
                 <div
-                  className="col-20 tabs"
+                  className="row tabs"
                 >
                   No media available
                 </div>

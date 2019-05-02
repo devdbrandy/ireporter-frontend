@@ -9,7 +9,7 @@ import { NewRecord } from './index';
  */
 const setup = () => {
   const props = {
-    createRecord: {},
+    createRecord: jest.fn(),
   };
 
   const component = shallow(<NewRecord {...props} />);

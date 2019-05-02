@@ -12,9 +12,108 @@ exports[`<BrowseRecords /> renders without crashing given the required props 1`]
         <div
           className="row"
         >
-          <Record />
+          No records found
         </div>
       </div>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        contentLabel=""
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[MockFunction]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "bottom": "auto",
+              "left": "50%",
+              "marginRight": "-50%",
+              "minWidth": "60%",
+              "padding": "0",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <div
+          className="modal--content"
+        >
+          <header
+            className="modal--label"
+          >
+            <h3>
+              Record information
+            </h3>
+          </header>
+          <div
+            className="modal--body"
+          >
+            <div
+              id="map"
+            />
+            <span
+              className="location"
+            >
+              <i
+                className="fas fa-map-marker-alt"
+              />
+               
+              <span
+                className="text"
+              />
+            </span>
+            <div
+              className="title"
+            >
+              <h4 />
+            </div>
+            <p
+              className="comment mt-10"
+            />
+            <div
+              className="media"
+            >
+              <h6>
+                Media
+              </h6>
+              <div
+                className="row gallery"
+              >
+                <div
+                  className="row tabs"
+                >
+                  No media available
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer
+            className="modal--footer"
+          >
+            <div
+              className="wrapper"
+            >
+              <button
+                className="btn btn-primary cancel"
+                onClick={[Function]}
+                type="button"
+              >
+                close
+              </button>
+            </div>
+          </footer>
+        </div>
+      </Modal>
     </withRouter(Panel)>
   </Layout>
 </Fragment>

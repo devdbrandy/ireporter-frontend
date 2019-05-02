@@ -36,7 +36,10 @@ const Panel = ({ title, history, children }) => (
 Panel.propTypes = {
   title: PropTypes.string,
   history: PropTypes.object.isRequired,
-  children: PropTypes.array.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };
 
 Panel.defaultProps = {

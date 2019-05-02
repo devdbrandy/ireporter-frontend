@@ -1,5 +1,5 @@
 import initialState from '../store/initialState';
-import { fetchUserRecordsType } from '../actions/recordsAction';
+import { fetchUserRecordsType, fetchRecordsType } from '../actions/recordsAction';
 import { deleteRecordAction } from '../actions/recordAction';
 
 const { records } = initialState;
@@ -10,6 +10,11 @@ export default (state = records, { type, payload }) => {
       return {
         ...state,
         userRecords: payload
+      };
+    case fetchRecordsType.success:
+      return {
+        ...state,
+        records: payload
       };
     case deleteRecordAction.success:
       return {

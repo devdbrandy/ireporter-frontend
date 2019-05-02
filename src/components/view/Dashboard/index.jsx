@@ -37,7 +37,7 @@ export const Dashboard = (props) => {
   const [state, setState] = useState({
     fetchedRecords: false,
     modalIsOpen: false,
-    article: {},
+    record: {},
   });
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const Dashboard = (props) => {
     setState({
       ...state,
       modalIsOpen: true,
-      article: data,
+      record: data,
     });
   };
 
@@ -77,7 +77,7 @@ export const Dashboard = (props) => {
    * @returns {void}
    */
   const afterModalOpen = async () => {
-    const { article: { location } } = state;
+    const { record: { location } } = state;
     const [lat, lng] = location.split(',');
     const latLng = {
       lat: parseFloat(lat),
@@ -92,8 +92,8 @@ export const Dashboard = (props) => {
     const address = await lookupAddress(location);
     setState({
       ...state,
-      article: {
-        ...state.article,
+      record: {
+        ...state.record,
         address,
       },
     });
@@ -207,19 +207,19 @@ export const Dashboard = (props) => {
                 <span className="location">
                   <i className="fas fa-map-marker-alt" />
                   {' '}
-                  <span className="text">{state.article.address}</span>
+                  <span className="text">{state.record.address}</span>
                 </span>
                 <div className="title">
-                  <h4>{state.article.title || ''}</h4>
+                  <h4>{state.record.title || ''}</h4>
                 </div>
-                <p className="comment mt-10">{state.article.comment || ''}</p>
+                <p className="comment mt-10">{state.record.comment || ''}</p>
                 <div className="media">
                   <h6>Media</h6>
                   <div className="row gallery">
-                    <div className="col-20 tabs">
-                      {state.article.images ? (
-                        state.article.images.map((image, index) => (
-                          <div key={index}>
+                    <div className="row tabs">
+                      {state.record.images ? (
+                        state.record.images.map((image, index) => (
+                          <div key={index} className="col-20">
                             <img src={image} alt="preview" />
                           </div>
                         ))
