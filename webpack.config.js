@@ -1,6 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
+
+const dotenvPlugin = new Dotenv();
+const envLoaderPlugin = new webpack.DefinePlugin({
+  'process.env.CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
+  'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(process.env.CLOUDINARY_UPLOAD_PRESET),
+});
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.jsx'),
@@ -56,6 +64,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
+    dotenvPlugin,
+    envLoaderPlugin,
   ],
   resolve: { extensions: ['.js', '.jsx'] },
 };
