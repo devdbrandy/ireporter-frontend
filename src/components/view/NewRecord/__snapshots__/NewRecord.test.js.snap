@@ -145,21 +145,18 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                       Location
                     </label>
                   </div>
-                  <div
-                    className="col-10"
+                  <PlacesAutocomplete
+                    debounce={200}
+                    highlightFirstSuggestion={false}
+                    onChange={[Function]}
+                    onError={[Function]}
+                    onSelect={[Function]}
+                    searchOptions={Object {}}
+                    shouldFetchSuggestions={true}
+                    value=""
                   >
-                    <input
-                      id="geoautocomplete"
-                      name="geoautocomplete"
-                      placeholder="Enter incident location"
-                      type="text"
-                    />
-                    <input
-                      id="location"
-                      name="location"
-                      type="hidden"
-                    />
-                  </div>
+                    <Component />
+                  </PlacesAutocomplete>
                 </div>
                 <div
                   className="form-control"
@@ -177,6 +174,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                         <button
                           className="cloudinary-button"
                           id="upload-widget"
+                          onClick={[Function]}
                           type="button"
                         >
                           <i
