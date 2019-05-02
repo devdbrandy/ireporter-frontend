@@ -21,7 +21,10 @@ const ProtectedRoute = ({
 );
 
 ProtectedRoute.propTypes = {
-  component: PropTypes.func,
+  component: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object
+  ]),
   isAuthenticated: PropTypes.bool
 };
 

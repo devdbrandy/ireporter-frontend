@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';

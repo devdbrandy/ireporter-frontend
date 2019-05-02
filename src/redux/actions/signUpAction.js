@@ -5,9 +5,9 @@ import makeRequest from '../../utils/request';
 export const signUpType = typeGenerator('SIGNUP');
 
 /**
- * Action creator that is dispatched upon making request
+ * Action creator that is dispatched upon loading request
  *
- * @param {object} payload - The user payload state
+ * @param {boolean} payload - The loading control state
  * @returns {object} - Returns an action object
  */
 export const signUpLoading = payload => ({
@@ -16,7 +16,7 @@ export const signUpLoading = payload => ({
 });
 
 /**
- * Action creator that is dispatched upon successfully clapping on article
+ * Action creator that is dispatched upon successfully signup
  *
  * @param {object} payload - The user payload state
  * @returns {object} - Returns an action object
@@ -27,9 +27,9 @@ export const signUpSuccess = payload => ({
 });
 
 /**
- * Action creator that is dispatched if there's failure clapping on article
+ * Action creator that is dispatched if there's signup failure
  *
- * @param {object} payload - The user payload state
+ * @param {object} payload - The error object
  * @returns {object} - Returns an action object
  */
 export const signUpFailure = payload => ({
