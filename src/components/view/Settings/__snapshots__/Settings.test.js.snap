@@ -27,6 +27,7 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
             >
               <form
                 id="settings-form"
+                onSubmit={[Function]}
               >
                 <div
                   className="form-control"
@@ -47,7 +48,6 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                       disabled={true}
                       id="username"
                       type="text"
-                      value="@username"
                     />
                   </div>
                 </div>
@@ -70,7 +70,6 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                       disabled={true}
                       id="email"
                       type="email"
-                      value="johndoe@email.com"
                     />
                   </div>
                 </div>
@@ -98,8 +97,8 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                         <input
                           id="firstname"
                           name="firstname"
+                          onChange={[Function]}
                           type="text"
-                          value="John"
                         />
                       </div>
                       <div
@@ -108,8 +107,8 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                         <input
                           id="lastname"
                           name="lastname"
+                          onChange={[Function]}
                           type="text"
-                          value="Doe"
                         />
                       </div>
                     </div>
@@ -119,6 +118,7 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                       <input
                         id="othernames"
                         name="othernames"
+                        onChange={[Function]}
                         placeholder="Other names"
                         type="text"
                       />
@@ -143,8 +143,8 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                     <input
                       id="phonenumber"
                       name="phoneNumber"
+                      onChange={[Function]}
                       type="text"
-                      value="07012345678"
                     />
                   </div>
                 </div>
@@ -166,10 +166,9 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                     <textarea
                       id="bio"
                       name="bio"
+                      onChange={[Function]}
                       placeholder="a short bio of yourself"
-                    >
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam assumenda doloremque ab! Enim debitis soluta dignissimos illum veritatis cumque non.
-                    </textarea>
+                    />
                   </div>
                 </div>
                 <div
@@ -195,7 +194,6 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                       >
                         <img
                           alt="avatar"
-                          src="img/avatar.jpg"
                         />
                       </div>
                       <input
@@ -230,7 +228,9 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                   >
                     <label>
                       <input
+                        checked={false}
                         name="gender"
+                        onChange={[Function]}
                         type="radio"
                         value="male"
                       />
@@ -238,7 +238,9 @@ exports[`<Settings /> renders without crashing given the required props 1`] = `
                     </label>
                     <label>
                       <input
+                        checked={false}
                         name="gender"
+                        onChange={[Function]}
                         type="radio"
                         value="female"
                       />

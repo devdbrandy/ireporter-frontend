@@ -10,7 +10,7 @@ import { profileUpdateAction } from '../../../redux/actions/profileAction';
  * @param {object} props - The component props
  * @returns {JSX.Element} DOM elements
  */
-const Settings = (props) => {
+export const Settings = (props) => {
   const { user, updateProfile } = props;
   const initialState = {
     firstname: user.firstname,
