@@ -1,111 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Profile /> renders without crashing given the required props 1`] = `
-<Fragment>
-  <Layout>
-    <div
-      className="container"
-    >
-      <main
-        id="main"
+Object {
+  "component": <Fragment>
+    <Layout>
+      <div
+        className="container"
       >
-        <div
-          className="column"
+        <main
+          id="main"
         >
           <div
-            className="panel"
+            className="column"
           >
             <div
-              className="panel--heading"
-            >
-              <h3>
-                Profile
-              </h3>
-            </div>
-            <div
-              className="panel--body"
+              className="panel"
             >
               <div
-                className="user-profile row middle"
+                className="panel--heading"
+              >
+                <h3>
+                  Profile
+                </h3>
+              </div>
+              <div
+                className="panel--body"
               >
                 <div
-                  className="user--avatar column center"
-                >
-                  <img
-                    alt="avatar"
-                  />
-                </div>
-                <div
-                  className="user--detail column center"
-                >
-                  <h3>
-                     
-                  </h3>
-                  <Link
-                    className="btn btn-primary edit"
-                    to="/settings"
-                  >
-                    Edit Profile
-                  </Link>
-                  <hr
-                    className="dash"
-                  />
-                  <p
-                    className="user--bio"
-                  >
-                    No bio provided.
-                  </p>
-                </div>
-                <div
-                  className="user--stat column center text-center"
+                  className="user-profile row middle"
                 >
                   <div
-                    className="wrapper"
+                    className="user--avatar column center"
                   >
-                    <span>
-                      Joined:
+                    <img
+                      alt="avatar"
+                    />
+                  </div>
+                  <div
+                    className="user--detail column center"
+                  >
+                    <h3>
                        
-                      <i
-                        className="user--registered"
-                      >
-                        May 1st, 2019
-                      </i>
-                    </span>
+                    </h3>
+                    <Link
+                      className="btn btn-primary edit"
+                      to="/settings"
+                    >
+                      Edit Profile
+                    </Link>
                     <hr
                       className="dash"
                     />
-                    <span>
-                      <i
-                        className="incident-total"
-                      >
-                        0
-                      </i>
-                      Incidents Published
-                    </span>
-                    <span>
-                      <i
-                        className="incident-resolved"
-                      >
-                        0
-                      </i>
-                      Incidents Resolved
-                    </span>
-                    <span>
-                      <i
-                        className="incident-rejected"
-                      >
-                        0
-                      </i>
-                      Incidents Rejected
-                    </span>
+                    <p
+                      className="user--bio"
+                    >
+                      No bio provided.
+                    </p>
+                  </div>
+                  <div
+                    className="user--stat column center text-center"
+                  >
+                    <div
+                      className="wrapper"
+                    >
+                      <span>
+                        Joined:
+                         
+                        <i
+                          className="user--registered"
+                        >
+                          May 2nd, 2019
+                        </i>
+                      </span>
+                      <hr
+                        className="dash"
+                      />
+                      <span>
+                        <i
+                          className="incident-total"
+                        >
+                          0
+                        </i>
+                        Incidents Published
+                      </span>
+                      <span>
+                        <i
+                          className="incident-resolved"
+                        >
+                          0
+                        </i>
+                        Incidents Resolved
+                      </span>
+                      <span>
+                        <i
+                          className="incident-rejected"
+                        >
+                          0
+                        </i>
+                        Incidents Rejected
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
-  </Layout>
-</Fragment>
+        </main>
+      </div>
+    </Layout>
+  </Fragment>,
+  "props": Object {
+    "user": Object {},
+  },
+}
 `;
