@@ -1,10 +1,24 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NavBar from './index';
+import { NavBar } from './index';
+
+/**
+ * Wrapper for enzyme shallow component
+ *
+ * @returns {object} The mocked props and component
+ */
+function setup() {
+  const props = {
+    user: { username: '' }
+  };
+
+  const component = shallow(<NavBar {...props} />);
+  return { props, component };
+}
 
 describe('<NavBar />', () => {
   it('renders without crashing given the required props', () => {
-    const enzymeWrapper = shallow(<NavBar />);
-    expect(enzymeWrapper).toMatchSnapshot();
+    const { component } = setup();
+    expect(component).toMatchSnapshot();
   });
 });
