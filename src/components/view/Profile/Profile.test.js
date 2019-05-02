@@ -7,18 +7,18 @@ import { Profile } from './index';
  *
  * @returns {object} The mocked props and component
  */
-const setup = () => {
+function setup() {
   const props = {
     user: {},
   };
 
   const component = shallow(<Profile {...props} />);
   return { props, component };
-};
+}
 
 describe('<Profile />', () => {
   it('renders without crashing given the required props', () => {
-    const { component } = setup();
+    const component = setup();
     expect(component).toMatchSnapshot();
   });
 });
