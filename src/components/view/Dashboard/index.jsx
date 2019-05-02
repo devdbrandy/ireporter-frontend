@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Layout from '../Layout';
 import Panel from '../Panel';
 import { fetchUserRecords } from '../../../redux/actions/recordsAction';
+import { deleteRecordAction } from '../../../redux/actions/recordAction';
 import formatDate from '../../../utils/formatDate';
 import lookupAddress from '../../../utils/lookupAddress';
 
@@ -98,6 +99,19 @@ export const Dashboard = (props) => {
     });
   };
 
+  /**
+   * Handles record delete
+   *
+   * @param {object} record - The record object
+   * @returns {void}
+   */
+  const handleRecordDelete = (record) => {
+    const { deleteRecord } = props;
+    const { type, id } = record;
+    setState({ ...state, fetchedRecords: false });
+    deleteRecord(type, id);
+  };
+
   return (
     <>
       <Layout>
@@ -156,7 +170,10 @@ export const Dashboard = (props) => {
                           <i className="far fa-edit" />
                           <span className="text">Edit</span>
                         </Link>
-                        <button type="button" className="btn btn-danger action-btn delete">
+                        <button
+                          type="button"
+                          className="btn btn-danger action-btn delete"
+                          onClick={() => handleRecordDelete(record)}>
                           <i className="far fa-trash-alt" />
                           <span className="text">Delete</span>
                         </button>
@@ -234,6 +251,7 @@ Dashboard.propTypes = {
   userId: PropTypes.number.isRequired,
   fetchRecords: PropTypes.func.isRequired,
   records: PropTypes.array.isRequired,
+  deleteRecord: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -243,6 +261,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = ({
   fetchRecords: userId => fetchUserRecords(userId),
+  deleteRecord: (type, id) => deleteRecordAction(type, id),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
