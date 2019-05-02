@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { signUpUser } from '../../../redux/actions/signUpAction';
 import PasswordInput from '../../view/Inputs/PasswordInput';
 
-const Home = (props) => {
+export const Home = (props) => {
   const initialState = {
     firstname: '',
     lastname: '',

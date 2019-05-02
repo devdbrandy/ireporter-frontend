@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SigninPage /> renders without crashing given the required props 1`] = `
+<Fragment>
+  <main
+    className="signin"
+  >
+    <div
+      className="row"
+    >
+      <section
+        className="signin column center"
+      >
+        <div
+          className="signin--content column center"
+        >
+          <Link
+            className="home-icon"
+            to="/"
+          >
+            <i
+              className="fas fa-home"
+            />
+          </Link>
+          <header
+            className="signin--header"
+          >
+            <Link
+              to="/"
+            >
+              <h2
+                style={
+                  Object {
+                    "fontSize": "4.8em",
+                  }
+                }
+              >
+                <span
+                  className="primary-text"
+                >
+                  i
+                </span>
+                Reporter
+              </h2>
+            </Link>
+          </header>
+          <div
+            className="row"
+            id="signin-view"
+          >
+            <div
+              className="column center"
+            >
+              <LoginForm
+                handleLogin={[MockFunction]}
+              />
+              <div
+                className="row center"
+              >
+                <div
+                  className="row signin--or"
+                >
+                  <span>
+                    or
+                  </span>
+                </div>
+              </div>
+              <button
+                className="btn btn-secondary open"
+                onClick={[Function]}
+                type="button"
+              >
+                Create account
+              </button>
+            </div>
+          </div>
+        </div>
+        <Footer
+          contentClass="null"
+          customClass="signin--footer"
+        />
+      </section>
+      <section
+        className="showcase column center"
+      >
+        <div
+          className="showcase--content"
+        >
+          <h1>
+            Let’s build the Nation
+             
+            <strong>
+              together
+            </strong>
+          </h1>
+          <h4>
+            <span
+              className="primary-text"
+            >
+              iReporter
+            </span>
+             
+            is a platform for every citizens
+          </h4>
+        </div>
+      </section>
+    </div>
+  </main>
+</Fragment>
+`;

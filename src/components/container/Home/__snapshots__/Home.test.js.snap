@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders without crashing given the required props 1`] = `
+<Fragment>
+  <nav
+    className="main--navbar home"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row middle"
+      >
+        <div
+          className="column"
+        >
+          <div
+            className="navbar--logo"
+          >
+            <Link
+              to="/"
+            >
+              <span
+                className="primary-text"
+              >
+                i
+              </span>
+              Reporter
+            </Link>
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <div
+            className="navbar--right row middle sm-hide"
+          >
+            <Link
+              className="btn btn-primary"
+              to="/signin"
+            >
+              sign in
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <header
+    className="home--header"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="column"
+        >
+          <div
+            className="jumbotron"
+          >
+            <h1>
+              <span
+                className="primary-text"
+              >
+                i
+              </span>
+              Reporter
+            </h1>
+            <p>
+              A platform that encourages users (citizen) to bring any form of corruption to the notice of appropriate authorities and the general public. Report issues affecting the community while also seeking government quick intervention.
+            </p>
+            <div
+              className="row md-hide"
+            >
+              <Link
+                className="btn btn-primary"
+                to="/signin"
+              >
+                Sign In
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <div
+            className="home--signup"
+          >
+            <form
+              className="home--signup--form"
+              id="signup-form"
+              onSubmit={[Function]}
+            >
+              <div
+                className="input-wrapper"
+              >
+                <input
+                  minLength="3"
+                  name="firstname"
+                  onChange={[Function]}
+                  placeholder="First name"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="input-wrapper"
+              >
+                <input
+                  minLength="3"
+                  name="lastname"
+                  onChange={[Function]}
+                  placeholder="Last name"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="input-wrapper"
+              >
+                <input
+                  id="phonenumber"
+                  minLength="11"
+                  name="phoneNumber"
+                  onChange={[Function]}
+                  placeholder="Phone number"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="input-wrapper"
+              >
+                <input
+                  name="username"
+                  onChange={[Function]}
+                  placeholder="Username"
+                  required={true}
+                  type="text"
+                />
+              </div>
+              <div
+                className="input-wrapper"
+              >
+                <input
+                  name="email"
+                  onChange={[Function]}
+                  pattern="^([^\\\\x00-\\\\x20\\\\x22\\\\x28\\\\x29\\\\x2c\\\\x2e\\\\x3a-\\\\x3c\\\\x3e\\\\x40\\\\x5b-\\\\x5d\\\\x7f-\\\\xff]+|\\\\x22([^\\\\x0d\\\\x22\\\\x5c\\\\x80-\\\\xff]|\\\\x5c[\\\\x00-\\\\x7f])*\\\\x22)(\\\\x2e([^\\\\x00-\\\\x20\\\\x22\\\\x28\\\\x29\\\\x2c\\\\x2e\\\\x3a-\\\\x3c\\\\x3e\\\\x40\\\\x5b-\\\\x5d\\\\x7f-\\\\xff]+|\\\\x22([^\\\\x0d\\\\x22\\\\x5c\\\\x80-\\\\xff]|\\\\x5c[\\\\x00-\\\\x7f])*\\\\x22))*\\\\x40([^\\\\x00-\\\\x20\\\\x22\\\\x28\\\\x29\\\\x2c\\\\x2e\\\\x3a-\\\\x3c\\\\x3e\\\\x40\\\\x5b-\\\\x5d\\\\x7f-\\\\xff]+|\\\\x5b([^\\\\x0d\\\\x5b-\\\\x5d\\\\x80-\\\\xff]|\\\\x5c[\\\\x00-\\\\x7f])*\\\\x5d)(\\\\x2e([^\\\\x00-\\\\x20\\\\x22\\\\x28\\\\x29\\\\x2c\\\\x2e\\\\x3a-\\\\x3c\\\\x3e\\\\x40\\\\x5b-\\\\x5d\\\\x7f-\\\\xff]+|\\\\x5b([^\\\\x0d\\\\x5b-\\\\x5d\\\\x80-\\\\xff]|\\\\x5c[\\\\x00-\\\\x7f])*\\\\x5d))*(\\\\.\\\\w{2,})+$"
+                  placeholder="Email address"
+                  required={true}
+                  title="The domain portion of the email address is invalid (the portion after the @)."
+                  type="email"
+                />
+              </div>
+              <PasswordInput
+                handleOnChange={[Function]}
+                label=""
+                labelText=""
+                minLength="6"
+                name="password"
+                pattern="(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                placeholder="Password"
+                title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+              />
+              <PasswordInput
+                handleOnChange={[Function]}
+                label=""
+                labelText=""
+                minLength={null}
+                name="passwordConfirmation"
+                pattern={null}
+                placeholder="Repeat password"
+                title={null}
+              />
+              <button
+                className="btn btn-primary"
+                type="submit"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</Fragment>
+`;
