@@ -47,7 +47,7 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
             </Link>
             <Link
               className="btn btn-secondary add-button"
-              to="/"
+              to="/new/record"
             >
               <i
                 className="fas fa-plus"

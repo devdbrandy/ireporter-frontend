@@ -5,9 +5,11 @@ import reduceReducers from 'reduce-reducers';
 import authReducer from './authReducer';
 import signUpReducer from './signUpReducer';
 import profileReducer from './profileReducer';
+import common from './commonReducer';
 
 const auth = reduceReducers(authReducer, signUpReducer, profileReducer);
 
 export default combineReducers({
   auth,
+  common,
 });

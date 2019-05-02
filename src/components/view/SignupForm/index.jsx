@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import PropType from 'prop-types';
 import PasswordInput from '../Inputs/PasswordInput';

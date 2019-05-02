@@ -25,7 +25,7 @@ export const NavBar = (props) => {
                   Browse
                   <span className="text"> Records</span>
                 </Link>
-                <Link to="/" className="btn btn-secondary add-button">
+                <Link to="/new/record" className="btn btn-secondary add-button">
                   <i className="fas fa-plus" />
                   <span className="text">Add a record</span>
                 </Link>

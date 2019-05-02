@@ -38,7 +38,7 @@ export const profileUpdateFailure = payload => ({
 });
 
 /**
- * Handles user login
+ * Handles user profile update
  *
  * @export
  * @param {number} userId - The user unique id
