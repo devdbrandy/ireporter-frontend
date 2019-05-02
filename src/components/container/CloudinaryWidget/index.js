@@ -54,7 +54,13 @@ export default class CloudinaryWidget {
       sources: ['local', 'camera', 'facebook', 'instagram'],
     }, (error, result) => {
       if (!error && result && result.event === 'success') {
-        return handleSuccess(result.info.secure_url);
+        const {
+          original_filename: filename,
+          format,
+          secure_url: mediaUrl
+        } = result.info;
+        const originalFilename = `${filename}.${format}`;
+        return handleSuccess(mediaUrl, originalFilename);
       }
       handleFailure();
     });

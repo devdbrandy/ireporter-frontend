@@ -8,7 +8,7 @@ export const fetchUserRecordsType = typeGenerator('FETCH_RECORDS');
 /**
  * Action creator that is dispatched upon successfully fetching records
  *
- * @param {object} payload - The user profile payload
+ * @param {Array} payload - The list of records
  * @returns {object} - Returns an action object
  */
 export const fetchUserRecordsSuccess = payload => ({

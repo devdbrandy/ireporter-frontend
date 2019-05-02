@@ -187,6 +187,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                           type="hidden"
                           value="[]"
                         />
+                         
                         <small>
                           Upload media files
                         </small>
@@ -214,6 +215,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                   >
                     <label>
                       <input
+                        checked={true}
                         name="status"
                         onChange={[Function]}
                         type="radio"
@@ -223,6 +225,7 @@ exports[`<NewRecord /> renders without crashing given the required props 1`] = `
                     </label>
                     <label>
                       <input
+                        checked={false}
                         name="status"
                         onChange={[Function]}
                         type="radio"
