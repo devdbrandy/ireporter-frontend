@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { NavBar } from './index';
+import { NewRecord } from './index';
 
 /**
  * Wrapper for enzyme shallow component
@@ -9,14 +9,14 @@ import { NavBar } from './index';
  */
 function setup() {
   const props = {
-    user: { username: '' }
+    createRecord: jest.fn(),
   };
 
-  const component = shallow(<NavBar {...props} />);
+  const component = shallow(<NewRecord {...props} />);
   return { props, component };
 }
 
-describe('<NavBar />', () => {
+describe('<NewRecord />', () => {
   it('renders without crashing given the required props', () => {
     const { component } = setup();
     expect(component).toMatchSnapshot();
