@@ -6,6 +6,7 @@ const webpack = require('webpack');
 
 const dotenvPlugin = new Dotenv();
 const envLoaderPlugin = new webpack.DefinePlugin({
+  'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL),
   'process.env.CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
   'process.env.CLOUDINARY_UPLOAD_PRESET': JSON.stringify(process.env.CLOUDINARY_UPLOAD_PRESET),
 });

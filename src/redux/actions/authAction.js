@@ -3,6 +3,7 @@ import typeGenerator from './typeGenerator';
 import makeRequest from '../../utils/request';
 
 export const loginType = typeGenerator('LOGIN');
+export const logoutType = typeGenerator('LOGOUT');
 
 /**
  * Action creator that is dispatched upon loading login request
@@ -59,3 +60,10 @@ export const loginUser = payload => async (dispatch) => {
     }
   }
 };
+
+/**
+ * Action creator that logs out user
+ *
+ * @returns {object} - Returns an action object
+ */
+export const logoutUser = () => dispatch => dispatch({ type: logoutType.success });

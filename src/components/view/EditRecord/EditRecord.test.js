@@ -10,7 +10,7 @@ import { EditRecord } from './index';
 const setup = () => {
   const props = {
     createRecord: {},
-    userRecords: [],
+    records: [],
     updateRecord: jest.fn(),
   };
 

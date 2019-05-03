@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Layout from '../Layout';
 import Panel from '../Panel';
 import { fetchUserRecords } from '../../../redux/actions/recordsAction';
@@ -33,7 +33,12 @@ const customStyles = {
  * @returns {JSX.Element} DOM Element
  */
 export const Dashboard = (props) => {
-  const { fetchRecords, userId, records } = props;
+  const {
+    fetchRecords,
+    userId,
+    records,
+    isAdmin,
+  } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
     modalIsOpen: false,
@@ -111,6 +116,10 @@ export const Dashboard = (props) => {
     setState({ ...state, fetchedRecords: false });
     deleteRecord(type, id);
   };
+
+  if (isAdmin) {
+    return <Redirect to="/admin" />;
+  }
 
   return (
     <>
@@ -252,11 +261,13 @@ Dashboard.propTypes = {
   fetchRecords: PropTypes.func.isRequired,
   records: PropTypes.array.isRequired,
   deleteRecord: PropTypes.func.isRequired,
+  isAdmin: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
   userId: state.auth.user.id,
-  records: state.records.userRecords,
+  records: state.records.records,
+  isAdmin: state.auth.user.isAdmin,
 });
 
 const mapDispatchToProps = ({

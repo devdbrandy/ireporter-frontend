@@ -7,13 +7,14 @@ import PropTypes from 'prop-types';
 const ProtectedRoute = ({
   component: Component,
   isAuthenticated,
+  isAdmin,
   ...rest
 }) => (
   <Route
     {...rest}
     render={(props) => {
       if (!isAuthenticated) {
-        return <Redirect to="/" />;
+        return <Redirect to="/signin" />;
       }
       return <Component {...props} />;
     }}
@@ -25,12 +26,14 @@ ProtectedRoute.propTypes = {
     PropTypes.func,
     PropTypes.object
   ]),
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
+  isAdmin: PropTypes.bool,
 };
 
 ProtectedRoute.defaultProps = {
   component: null,
-  isAuthenticated: false
+  isAuthenticated: false,
+  isAdmin: false,
 };
 
 const mapStateToProps = state => ({

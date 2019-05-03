@@ -52,13 +52,14 @@ export const fetchUserRecords = userId => async (dispatch) => {
  * Fetches the given user records
  *
  * @export
- * @param {number} userId - The user unique id
+ * @param {boolean} published - The published state
  * @returns {void}
  */
-export const fetchRecordsAction = () => async (dispatch) => {
+export const fetchRecordsAction = published => async (dispatch) => {
   dispatch(commonLoading(true));
+  const query = published ? '?published=true&order=desc' : '?order=desc';
   try {
-    const response = await makeRequest('/api/v1/records?published=true&order=desc');
+    const response = await makeRequest(`/api/v1/records${query}`);
     const payload = response.data.data;
     dispatch(commonLoading(false));
     dispatch(fetchRecordsSuccess(payload));

@@ -11,6 +11,7 @@ import Layout from '../Layout';
 import { updateRecordAction } from '../../../redux/actions/recordAction';
 import CloudinaryWidget from '../../container/CloudinaryWidget';
 import { logger } from '../../../utils/helper';
+import { incidentStatuses } from '../../../utils/constants';
 
 let widget;
 
@@ -39,15 +40,16 @@ export const EditRecord = (props) => {
     fetchRecord: false,
   };
   const [state, setState] = useState(initialState);
+  const { isAdmin } = props;
 
   useEffect(() => {
     const { fetchRecord } = state;
     if (!fetchRecord) {
       const {
         match: { params: { id } },
-        userRecords,
+        records,
       } = props;
-      const record = userRecords.find(item => item.id === parseInt(id, 10));
+      const record = records.find(item => item.id === parseInt(id, 10));
       setState({
         ...state,
         ...record,
@@ -287,26 +289,20 @@ export const EditRecord = (props) => {
                         <label htmlFor="status">Status</label>
                       </div>
                       <div className="col-10">
-                        <label>
-                          <input
-                            type="radio"
-                            name="status"
-                            value="draft"
-                            checked={state.status === 'draft'}
-                            onChange={event => handleFieldChange(event)}
-                          />
-                          Draft
-                        </label>
-                        <label>
-                          <input
-                            type="radio"
-                            name="status"
-                            value="published"
-                            checked={state.status === 'published'}
-                            onChange={event => handleFieldChange(event)}
-                          />
-                          Publish
-                        </label>
+                        {incidentStatuses.map((incidentStatus, key) => (
+                          key > 1 && !isAdmin ? null : (
+                            <label key={key}>
+                              <input
+                                type="radio"
+                                name="status"
+                                value={incidentStatus}
+                                checked={state.status === incidentStatus}
+                                onChange={event => handleFieldChange(event)}
+                              />
+                              {incidentStatus}
+                            </label>
+                          )
+                        ))}
                       </div>
                     </div>
 
@@ -326,11 +322,13 @@ export const EditRecord = (props) => {
 
 EditRecord.propTypes = {
   updateRecord: PropType.func.isRequired,
-  userRecords: PropType.array.isRequired,
+  records: PropType.array.isRequired,
+  isAdmin: PropType.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
-  userRecords: state.records.userRecords,
+  records: state.records.records,
+  isAdmin: state.auth.user.isAdmin,
 });
 
 const mapDispatchToProps = ({

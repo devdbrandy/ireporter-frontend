@@ -9,7 +9,7 @@ export default (state = records, { type, payload }) => {
     case fetchUserRecordsType.success:
       return {
         ...state,
-        userRecords: payload
+        records: payload
       };
     case fetchRecordsType.success:
       return {
@@ -19,7 +19,7 @@ export default (state = records, { type, payload }) => {
     case deleteRecordAction.success:
       return {
         ...state,
-        userRecords: state.userRecords.filter(record => record.id !== payload)
+        records: state.userRecords.filter(record => record.id !== payload)
       };
     default:
       return state;

@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropType from 'prop-types';
+import { logoutUser } from '../../../redux/actions/authAction';
 
 export const NavBar = (props) => {
   const [showDropDown, setShowDropDown] = useState(false);
-  const { user: { username } } = props;
+  const {
+    user: { username },
+    logout,
+  } = props;
 
   return (
     <>
@@ -33,8 +37,8 @@ export const NavBar = (props) => {
                   <a href="#!" title="notification">
                     <i className="far fa-bell" />
                   </a>
-                  <div className="dropdown" onClick={() => setShowDropDown(!showDropDown)}>
-                    <a href="#!" title="dashboard menu">
+                  <div className="dropdown">
+                    <a href="#!" title="dashboard menu" onClick={() => setShowDropDown(!showDropDown)}>
                       <i className="fa fa-th" />
                     </a>
                     <div
@@ -54,7 +58,7 @@ export const NavBar = (props) => {
                       </Link>
                       <hr />
                       <span>Session</span>
-                      <a href="#!" id="logout">
+                      <a href="#!" id="logout" onClick={logout}>
                         <i className="fas fa-sign-out-alt" />
                         Sign Out
                         <span className="username">
@@ -77,10 +81,15 @@ export const NavBar = (props) => {
 
 NavBar.propTypes = {
   user: PropType.object.isRequired,
+  logout: PropType.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   user: state.auth.user,
 });
 
-export default connect(mapStateToProps)(NavBar);
+const mapDispatchToProps = ({
+  logout: () => logoutUser(),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

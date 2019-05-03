@@ -1,5 +1,5 @@
 import initialState from '../store/initialState';
-import { loginType } from '../actions/authAction';
+import { loginType, logoutType } from '../actions/authAction';
 
 const { auth } = initialState;
 
@@ -21,6 +21,12 @@ export default (state = auth, { type, payload }) => {
       return {
         ...state,
         errors: [payload]
+      };
+    case logoutType.success:
+      return {
+        ...state,
+        user: {},
+        isAuthenticated: false,
       };
     default:
       return state;
