@@ -68,9 +68,7 @@ Ensure that you have the following installed on your local machine:
 
 ### 1.4. Running Test
 
-Test specs are implemented using [*mocha*](https://mochajs.org) + [*chai*](https://chiajs.com) + [*sinon*](https://sinonjs.org).
-
-Make a duplicate of `.env` and rename to `.env.test`, then configure your test credentials.
+Make a duplicate of `.env.example` and rename to `.env.test`, then configure your test credentials.
 
 Two npm scripts are available to run the test suite:
 
