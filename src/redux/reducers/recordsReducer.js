@@ -1,6 +1,6 @@
 import initialState from '../store/initialState';
 import { fetchUserRecordsType, fetchRecordsType } from '../actions/recordsAction';
-import { deleteRecordType } from '../actions/recordAction';
+import { fetchSingleRecordType, deleteRecordType } from '../actions/recordAction';
 
 const { records } = initialState;
 

@@ -91,7 +91,7 @@ export const NewRecord = (props) => {
     event.preventDefault();
     const { createRecord } = props;
     const { type } = formData;
-    createRecord(type, formData);
+    createRecord(type, formData, props);
   };
 
   /**
@@ -310,7 +310,7 @@ NewRecord.propTypes = {
 };
 
 const mapDispatchToProps = ({
-  createRecord: (type, payload) => createRecordAction(type, payload),
+  createRecord: (type, payload, props) => createRecordAction(type, payload, props),
 });
 
 export default connect(null, mapDispatchToProps)(NewRecord);

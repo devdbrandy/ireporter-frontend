@@ -23,9 +23,10 @@ export const deleteRecordSuccess = payload => ({
  * @export
  * @param {string} type - The record type
  * @param {object} body - The record payload
+ * @param {object} ownProps - The component props
  * @returns {void}
  */
-export const createRecordAction = (type, body) => async (dispatch) => {
+export const createRecordAction = (type, body, ownProps) => async (dispatch) => {
   dispatch(commonLoading(true));
   try {
     const response = await makeRequest(`/api/v1/${type}`, {
@@ -33,6 +34,7 @@ export const createRecordAction = (type, body) => async (dispatch) => {
       body,
     });
     const { message } = response.data.data[0];
+    ownProps.history.push('/dashboard');
     toast.success(message);
     dispatch(commonLoading(false));
   } catch (error) {
