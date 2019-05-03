@@ -22,8 +22,7 @@ const Routes = () => (
       <ProtectedRoute path="/settings" component={SettingsComponent} />
       <ProtectedRoute path="/new/record" component={NewRecordComponent} />
       <ProtectedRoute path="/edit/record/:id" component={EditRecordComponent} />
-      <Route path="/settings" component={SettingsComponent} />
-      <Route path="/browse" component={BrowseRecordsComponent} />
+      <ProtectedRoute path="/browse" component={BrowseRecordsComponent} />
     </Switch>
   </Router>
 );
