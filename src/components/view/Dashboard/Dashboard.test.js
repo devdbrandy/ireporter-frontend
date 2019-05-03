@@ -17,6 +17,7 @@ const setup = () => {
     fetchRecords: jest.fn(),
     deleteRecord: jest.fn(),
     isAdmin: false,
+    overview: {},
   };
 
   const component = shallow(<Dashboard {...props} />);

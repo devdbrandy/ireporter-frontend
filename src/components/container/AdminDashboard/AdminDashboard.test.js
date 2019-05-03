@@ -14,6 +14,7 @@ const setup = () => {
     records: [],
     deleteRecord: jest.fn(),
     updateStatus: jest.fn(),
+    overview: {},
   };
 
   const component = shallow(<AdminDashboard {...props} />);
