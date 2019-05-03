@@ -15,5 +15,6 @@ export default {
     userRecords: [],
     records: [],
     record: {},
+    overview: {}
   },
 };

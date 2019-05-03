@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Layout from '../Layout';
 import Panel from '../Panel';
 import { fetchUserRecords } from '../../../redux/actions/recordsAction';
@@ -37,6 +37,7 @@ export const Dashboard = (props) => {
     fetchRecords,
     userId,
     records,
+    overview,
   } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
@@ -123,19 +124,27 @@ export const Dashboard = (props) => {
           <div className="overview">
             <div className="row">
               <div className="card">
-                <span className="count" id="total-records">0</span>
+                <span className="count" id="total-records">
+                  {overview.total || 0}
+                </span>
                 <h5>Total Records</h5>
               </div>
               <div className="card">
-                <span className="count" id="investigation-count">0</span>
+                <span className="count" id="investigation-count">
+                  {overview['under-investigation'] || 0}
+                </span>
                 <h5>Under investigation</h5>
               </div>
               <div className="card">
-                <span className="count" id="resolved-count">0</span>
+                <span className="count" id="resolved-count">
+                  {overview.resolved || 0}
+                </span>
                 <h5>Resolved</h5>
               </div>
               <div className="card">
-                <span className="count" id="rejected-count">0</span>
+                <span className="count" id="rejected-count">
+                  {overview.rejected || 0}
+                </span>
                 <h5>Rejected</h5>
               </div>
             </div>
@@ -256,11 +265,13 @@ Dashboard.propTypes = {
   fetchRecords: PropTypes.func.isRequired,
   records: PropTypes.array.isRequired,
   deleteRecord: PropTypes.func.isRequired,
+  overview: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
   userId: state.auth.user.id,
   records: state.records.userRecords,
+  overview: state.records.overview,
 });
 
 const mapDispatchToProps = ({

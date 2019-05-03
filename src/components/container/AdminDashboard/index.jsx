@@ -19,7 +19,7 @@ import '../../../styles/admin.css';
  * @returns {JSX.Element} DOM Element
  */
 export const AdminDashboard = (props) => {
-  const { isAdmin } = props;
+  const { isAdmin, overview } = props;
   const { fetchRecords, records } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
@@ -90,15 +90,21 @@ export const AdminDashboard = (props) => {
           <div className="overview">
             <div className="row">
               <div className="card column">
-                <span className="count" id="total-records">0</span>
+                <span className="count" id="total-records">
+                  {overview.total || 0}
+                </span>
                 <h5>Total Records</h5>
               </div>
               <div className="card column">
-                <span className="count" id="resolved-count">0</span>
+                <span className="count" id="resolved-count">
+                  {overview.resolved || 0}
+                </span>
                 <h5>Resolved</h5>
               </div>
               <div className="card column">
-                <span className="count" id="investigation-count">0</span>
+                <span className="count" id="investigation-count">
+                  {overview['under-investigation'] || 0}
+                </span>
                 <h5>Under Investigation</h5>
               </div>
             </div>
@@ -189,11 +195,13 @@ AdminDashboard.propTypes = {
   records: PropTypes.array.isRequired,
   deleteRecord: PropTypes.func.isRequired,
   updateStatus: PropTypes.func.isRequired,
+  overview: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({
   isAdmin: state.auth.user.isAdmin,
   records: state.records.userRecords,
+  overview: state.records.overview,
 });
 
 const mapDispatchToProps = ({
