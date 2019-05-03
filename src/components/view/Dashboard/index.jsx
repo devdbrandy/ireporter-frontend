@@ -37,7 +37,6 @@ export const Dashboard = (props) => {
     fetchRecords,
     userId,
     records,
-    isAdmin,
   } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
@@ -116,10 +115,6 @@ export const Dashboard = (props) => {
     setState({ ...state, fetchedRecords: false });
     deleteRecord(type, id);
   };
-
-  if (isAdmin) {
-    return <Redirect to="/admin" />;
-  }
 
   return (
     <>
@@ -261,13 +256,11 @@ Dashboard.propTypes = {
   fetchRecords: PropTypes.func.isRequired,
   records: PropTypes.array.isRequired,
   deleteRecord: PropTypes.func.isRequired,
-  isAdmin: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => ({
   userId: state.auth.user.id,
   records: state.records.userRecords,
-  isAdmin: state.auth.user.isAdmin,
 });
 
 const mapDispatchToProps = ({
