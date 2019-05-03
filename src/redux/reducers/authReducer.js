@@ -27,6 +27,7 @@ export default (state = auth, { type, payload }) => {
         ...state,
         user: {},
         isAuthenticated: false,
+        token: '',
       };
     default:
       return state;
