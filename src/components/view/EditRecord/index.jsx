@@ -305,7 +305,7 @@ export const EditRecord = (props) => {
               <button
                 type="submit"
                 className="btn btn-primary"
-                disabled={incidentStatuses.indexOf(state.status) > 1}>
+                disabled={incidentStatuses.indexOf(state.status) > 1 && !isAdmin}>
                 Update record
               </button>
             </div>

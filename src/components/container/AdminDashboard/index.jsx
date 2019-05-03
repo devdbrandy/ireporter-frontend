@@ -47,14 +47,29 @@ export const AdminDashboard = (props) => {
     deleteRecord(type, id);
   };
 
-  const handleStatusUpdate = ({ type, id }) => {
+  /**
+   * Handles record status update
+   *
+   * @param {Event} event - The Event object
+   * @param {object} record - The record object
+   * @returns {void}
+   */
+  const handleStatusUpdate = (event, { type, id }) => {
     const { updateStatus } = props;
-    updateStatus({
-      type,
-      id,
-      status: state[id],
-    });
-    setState({ ...state, fetchedRecords: false });
+    if (state[id]) {
+      updateStatus({
+        type,
+        id,
+        status: state[id],
+      });
+      setState({ ...state, fetchedRecords: false });
+    }
+
+    const icon = event.target;
+    icon.classList.add('fa-spin');
+    setTimeout(() => {
+      icon.classList.remove('fa-spin');
+    }, 2000);
   };
 
   const handleStatusChange = (e, id) => {
@@ -128,7 +143,7 @@ export const AdminDashboard = (props) => {
                           <a
                             className="action-sync"
                             title="sync update"
-                            onClick={() => handleStatusUpdate(record)}>
+                            onClick={event => handleStatusUpdate(event, record)}>
                             <i className="fas fa-sync-alt" />
                           </a>
                         </div>
