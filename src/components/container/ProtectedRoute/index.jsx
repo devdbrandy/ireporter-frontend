@@ -13,8 +13,12 @@ const ProtectedRoute = ({
   <Route
     {...rest}
     render={(props) => {
+      const { match } = props;
       if (!isAuthenticated) {
         return <Redirect to="/signin" />;
+      }
+      if (match.path === '/dashboard' && isAdmin) {
+        return <Redirect to="/admin" />;
       }
       return <Component {...props} />;
     }}
@@ -26,18 +30,21 @@ ProtectedRoute.propTypes = {
     PropTypes.func,
     PropTypes.object
   ]),
+  match: PropTypes.object,
   isAuthenticated: PropTypes.bool,
   isAdmin: PropTypes.bool,
 };
 
 ProtectedRoute.defaultProps = {
   component: null,
+  match: null,
   isAuthenticated: false,
   isAdmin: false,
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  isAuthenticated: state.auth.isAuthenticated,
+  isAdmin: state.auth.user.isAdmin,
 });
 
 export default connect(mapStateToProps)(ProtectedRoute);
