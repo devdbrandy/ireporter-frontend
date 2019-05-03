@@ -178,7 +178,7 @@ AdminDashboard.propTypes = {
 
 const mapStateToProps = state => ({
   isAdmin: state.auth.user.isAdmin,
-  records: state.records.records,
+  records: state.records.userRecords,
 });
 
 const mapDispatchToProps = ({

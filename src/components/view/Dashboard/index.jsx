@@ -266,7 +266,7 @@ Dashboard.propTypes = {
 
 const mapStateToProps = state => ({
   userId: state.auth.user.id,
-  records: state.records.records,
+  records: state.records.userRecords,
   isAdmin: state.auth.user.isAdmin,
 });
 

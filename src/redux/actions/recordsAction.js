@@ -62,7 +62,8 @@ export const fetchRecordsAction = published => async (dispatch) => {
     const response = await makeRequest(`/api/v1/records${query}`);
     const payload = response.data.data;
     dispatch(commonLoading(false));
-    dispatch(fetchRecordsSuccess(payload));
+    if (published) dispatch(fetchRecordsSuccess(payload));
+    else dispatch(fetchUserRecordsSuccess(payload));
   } catch (error) {
     const errorResponse = exceptionHandler(error);
     dispatch(commonFailure(errorResponse));
