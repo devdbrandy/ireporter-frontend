@@ -28,7 +28,7 @@ export const AdminDashboard = (props) => {
 
   useEffect(() => {
     const { fetchedRecords } = state;
-    if (isAdmin && !fetchedRecords) {
+    if (!fetchedRecords) {
       fetchRecords();
       setState({ ...state, fetchedRecords: true });
     }

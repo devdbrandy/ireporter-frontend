@@ -10,6 +10,8 @@ export const logger = console;
  * @returns {String} Fullname string
  */
 export const getName = (user) => {
-  const { firstname, lastname } = user;
-  return `${firstname} ${lastname}`;
+  if (user) {
+    const { firstname, lastname } = user;
+    return `${firstname} ${lastname}`;
+  }
 };

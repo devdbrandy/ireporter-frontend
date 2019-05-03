@@ -16,7 +16,7 @@ const Routes = () => (
     <Switch>
       <Route path="/" component={HomeComponent} exact />
       <Route path="/signin" component={Signin} />
-      <ProtectedRoute path="/admin" component={AdminDashboardComponent} exact />
+      <ProtectedRoute path="/admin" component={AdminDashboardComponent} />
       <ProtectedRoute path="/dashboard" component={DashboardComponent} />
       <ProtectedRoute path="/profile" component={ProfileComponent} />
       <ProtectedRoute path="/settings" component={SettingsComponent} />
