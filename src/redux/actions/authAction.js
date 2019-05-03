@@ -55,7 +55,11 @@ export const loginUser = payload => async (dispatch) => {
     const { response } = errorObject;
     if (response) {
       const responseError = response.data.error;
-      toast.error(responseError);
+      let message = responseError;
+      if (Array.isArray(responseError)) {
+        message = responseError[0].msg;
+      }
+      toast.error(message);
       dispatch(loginFailure(responseError));
     }
   }
