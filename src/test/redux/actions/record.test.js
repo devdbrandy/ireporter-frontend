@@ -18,6 +18,9 @@ describe('Action creators', () => {
         data: [{ message: 'success message' }]
       }
     });
+    const props = {
+      history: { push: jest.fn() }
+    };
     const expectedAction = [
       {
         type: commonType.loading,
@@ -29,7 +32,7 @@ describe('Action creators', () => {
       },
     ];
     const store = mockStore();
-    return store.dispatch(actions.createRecordAction('red-flags', {})).then(() => {
+    return store.dispatch(actions.createRecordAction('red-flags', {}, props)).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });

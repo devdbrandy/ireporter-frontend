@@ -3,260 +3,220 @@
 exports[`<EditRecord /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
-    <div
-      className="container"
+    <withRouter(Panel)
+      title="Update Record"
     >
-      <main
-        id="main"
+      <form
+        id="create-record-form"
+        onSubmit={[Function]}
       >
         <div
-          className="column"
+          className="form-control"
         >
           <div
-            className="panel"
+            className="col-2"
           >
-            <div
-              className="panel--heading"
+            <label
+              htmlFor="#"
             >
-              <div
-                className="row"
-              >
-                <h3>
-                  Add New Record
-                </h3>
-                <div
-                  className="column"
-                >
-                  <div
-                    className="row end"
-                  >
-                    <button
-                      className="btn btn-back"
-                      type="button"
-                    >
-                      <i
-                        className="fas fa-reply"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="panel--body"
-            >
-              <form
-                id="create-record-form"
-                onSubmit={[Function]}
-              >
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="#"
-                    >
-                      Record Type
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <label>
-                      <input
-                        checked={false}
-                        name="type"
-                        onChange={[Function]}
-                        type="radio"
-                        value="red-flags"
-                      />
-                      Red Flag
-                    </label>
-                    <label>
-                      <input
-                        checked={false}
-                        name="type"
-                        onChange={[Function]}
-                        type="radio"
-                        value="interventions"
-                      />
-                      Intervention
-                    </label>
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="title"
-                    >
-                      Short Title
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <input
-                      id="title"
-                      name="title"
-                      onChange={[Function]}
-                      placeholder="Enter a short title"
-                      type="text"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="comment"
-                    >
-                      Comment
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <textarea
-                      id="comment"
-                      name="comment"
-                      onChange={[Function]}
-                      placeholder="Enter record comment"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="geoautocomplete"
-                    >
-                      Location
-                    </label>
-                  </div>
-                  <PlacesAutocomplete
-                    debounce={200}
-                    highlightFirstSuggestion={false}
-                    onChange={[Function]}
-                    onError={[Function]}
-                    onSelect={[Function]}
-                    searchOptions={Object {}}
-                    shouldFetchSuggestions={true}
-                    value=""
-                  >
-                    <Component />
-                  </PlacesAutocomplete>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  />
-                  <div
-                    className="col-10"
-                  >
-                    <div
-                      className="upload-btn-wrapper"
-                    >
-                      <label>
-                        <button
-                          className="cloudinary-button"
-                          id="upload-widget"
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          <i
-                            className="fas fa-paperclip"
-                          />
-                        </button>
-                        <input
-                          id="media"
-                          name="media"
-                          type="hidden"
-                          value="[]"
-                        />
-                         
-                        <small>
-                          Upload media files
-                        </small>
-                      </label>
-                    </div>
-                    <ul
-                      className="media-list"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="status"
-                    >
-                      Status
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <label
-                      key="0"
-                    >
-                      <input
-                        checked={true}
-                        name="status"
-                        onChange={[Function]}
-                        type="radio"
-                        value="draft"
-                      />
-                      draft
-                    </label>
-                    <label
-                      key="1"
-                    >
-                      <input
-                        checked={false}
-                        name="status"
-                        onChange={[Function]}
-                        type="radio"
-                        value="published"
-                      />
-                      published
-                    </label>
-                  </div>
-                </div>
-                <div
-                  className="row end mt-60"
-                >
-                  <button
-                    className="btn btn-primary"
-                    type="submit"
-                  >
-                    Update record
-                  </button>
-                </div>
-              </form>
-            </div>
+              Record Type
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <label>
+              <input
+                checked={false}
+                name="type"
+                onChange={[Function]}
+                type="radio"
+                value="red-flags"
+              />
+              Red Flag
+            </label>
+            <label>
+              <input
+                checked={false}
+                name="type"
+                onChange={[Function]}
+                type="radio"
+                value="interventions"
+              />
+              Intervention
+            </label>
           </div>
         </div>
-      </main>
-    </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="title"
+            >
+              Short Title
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <input
+              id="title"
+              name="title"
+              onChange={[Function]}
+              placeholder="Enter a short title"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="comment"
+            >
+              Comment
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <textarea
+              id="comment"
+              name="comment"
+              onChange={[Function]}
+              placeholder="Enter record comment"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="geoautocomplete"
+            >
+              Location
+            </label>
+          </div>
+          <PlacesAutocomplete
+            debounce={200}
+            highlightFirstSuggestion={false}
+            onChange={[Function]}
+            onError={[Function]}
+            onSelect={[Function]}
+            searchOptions={Object {}}
+            shouldFetchSuggestions={true}
+            value=""
+          >
+            <Component />
+          </PlacesAutocomplete>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          />
+          <div
+            className="col-10"
+          >
+            <div
+              className="upload-btn-wrapper"
+            >
+              <label>
+                <button
+                  className="cloudinary-button"
+                  id="upload-widget"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <i
+                    className="fas fa-paperclip"
+                  />
+                </button>
+                <input
+                  id="media"
+                  name="media"
+                  type="hidden"
+                  value="[]"
+                />
+                 
+                <small>
+                  Upload media files
+                </small>
+              </label>
+            </div>
+            <ul
+              className="media-list"
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="status"
+            >
+              Status
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <label
+              key="0"
+            >
+              <input
+                checked={true}
+                disabled={false}
+                name="status"
+                onChange={[Function]}
+                type="radio"
+                value="draft"
+              />
+              draft
+            </label>
+            <label
+              key="1"
+            >
+              <input
+                checked={false}
+                disabled={false}
+                name="status"
+                onChange={[Function]}
+                type="radio"
+                value="published"
+              />
+              published
+            </label>
+          </div>
+        </div>
+        <div
+          className="row end mt-60"
+        >
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            type="submit"
+          >
+            Update record
+          </button>
+        </div>
+      </form>
+    </withRouter(Panel)>
   </Layout>
 </Fragment>
 `;
