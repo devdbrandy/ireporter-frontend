@@ -215,7 +215,9 @@ exports[`<EditRecord /> renders without crashing given the required props 1`] = 
                   <div
                     className="col-10"
                   >
-                    <label>
+                    <label
+                      key="0"
+                    >
                       <input
                         checked={true}
                         name="status"
@@ -223,9 +225,11 @@ exports[`<EditRecord /> renders without crashing given the required props 1`] = 
                         type="radio"
                         value="draft"
                       />
-                      Draft
+                      draft
                     </label>
-                    <label>
+                    <label
+                      key="1"
+                    >
                       <input
                         checked={false}
                         name="status"
@@ -233,7 +237,7 @@ exports[`<EditRecord /> renders without crashing given the required props 1`] = 
                         type="radio"
                         value="published"
                       />
-                      Publish
+                      published
                     </label>
                   </div>
                 </div>

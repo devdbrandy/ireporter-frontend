@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const apiInstance = axios.create({
-  baseURL: 'http://localhost:3001'
+  baseURL: process.env.API_BASE_URL
 });
 
 const makeRequest = async (url, options = { method: 'GET' }) => {
@@ -18,7 +18,7 @@ const makeRequest = async (url, options = { method: 'GET' }) => {
       'Content-type': 'application/json',
       Authorization: userToken ? `Bearer ${userToken}` : ''
     }
-  })
+  });
 };
 
 export default makeRequest;

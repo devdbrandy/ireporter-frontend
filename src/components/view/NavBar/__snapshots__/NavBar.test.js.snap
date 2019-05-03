@@ -71,10 +71,10 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
               </a>
               <div
                 className="dropdown"
-                onClick={[Function]}
               >
                 <a
                   href="#!"
+                  onClick={[Function]}
                   title="dashboard menu"
                 >
                   <i

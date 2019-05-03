@@ -67,6 +67,32 @@ export const updateRecordAction = (type, id, body) => async (dispatch) => {
 };
 
 /**
+ * Handles record status update
+ *
+ * @export
+ * @param {string} type - The record type
+ * @param {number} id - The record id
+ * @param {object} body - The record payload
+ * @returns {void}
+ */
+export const updateRecordStatusAction = ({ type, id, status }) => async (dispatch) => {
+  dispatch(commonLoading(true));
+  try {
+    const response = await makeRequest(`/api/v1/${type}s/${id}/status`, {
+      method: 'PATCH',
+      body: { status }
+    });
+    const { message } = response.data.data[0];
+    toast.success(message);
+    dispatch(commonLoading(false));
+  } catch (error) {
+    const errorResponse = exceptionHandler(error);
+    toast.error(errorResponse);
+    dispatch(commonFailure(errorResponse));
+  }
+};
+
+/**
  * Handles record delete
  *
  * @export

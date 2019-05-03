@@ -37,7 +37,7 @@ export const BrowseRecords = (props) => {
   useEffect(() => {
     const { fetchedRecords } = state;
     if (!fetchedRecords) {
-      fetchRecords();
+      fetchRecords(true);
       setState({ ...state, fetchedRecords: true });
     }
   });
@@ -173,7 +173,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = ({
-  fetchRecords: () => fetchRecordsAction(),
+  fetchRecords: published => fetchRecordsAction(published),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BrowseRecords);
