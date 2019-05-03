@@ -6,7 +6,7 @@ const mockStore = createMockStore();
 
 jest.mock('../../../utils/request.js');
 
-const { loginType } = actions;
+const { loginType, logoutType } = actions;
 const payload = {
   token: '',
   user: {},

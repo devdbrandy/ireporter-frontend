@@ -9,7 +9,10 @@ import { NavBar } from './index';
  */
 function setup() {
   const props = {
-    user: { username: '' }
+    user: {
+      username: ''
+    },
+    logout: jest.fn(),
   };
 
   const component = shallow(<NavBar {...props} />);

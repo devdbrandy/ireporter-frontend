@@ -1,6 +1,6 @@
 import initialState from '../store/initialState';
 import { fetchUserRecordsType, fetchRecordsType } from '../actions/recordsAction';
-import { deleteRecordAction } from '../actions/recordAction';
+import { deleteRecordType } from '../actions/recordAction';
 
 const { records } = initialState;
 
@@ -9,17 +9,17 @@ export default (state = records, { type, payload }) => {
     case fetchUserRecordsType.success:
       return {
         ...state,
-        records: payload
+        userRecords: payload
       };
     case fetchRecordsType.success:
       return {
         ...state,
         records: payload
       };
-    case deleteRecordAction.success:
+    case deleteRecordType.success:
       return {
         ...state,
-        records: state.userRecords.filter(record => record.id !== payload)
+        userRecords: state.userRecords.filter(record => record.id !== payload)
       };
     default:
       return state;

@@ -4,7 +4,7 @@ import exceptionHandler from '../../utils/exceptionHandler';
 import { commonLoading, commonFailure } from './commonAction';
 import typeGenerator from './typeGenerator';
 
-const deleteRecordType = typeGenerator('DELETE_RECORD');
+export const deleteRecordType = typeGenerator('DELETE_RECORD');
 
 /**
  * Action creator that is dispatched upon successful record removal

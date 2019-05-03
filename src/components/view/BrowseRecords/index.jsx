@@ -99,7 +99,7 @@ export const BrowseRecords = (props) => {
         <Panel title="Browse Records">
           <div className="records-list">
             <div className="row">
-              {records.length > 0 ? (
+              {(records.length > 0) ? (
                 records.map(record => (
                   <Record key={record.id} record={record} openModal={openModal} />
                 ))

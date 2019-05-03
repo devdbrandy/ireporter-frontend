@@ -12,6 +12,7 @@ const setup = () => {
     createRecord: {},
     records: [],
     updateRecord: jest.fn(),
+    isAdmin: false,
   };
 
   const component = shallow(<EditRecord {...props} />);

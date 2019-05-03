@@ -12,6 +12,7 @@ export default {
     error: [],
   },
   records: {
+    userRecords: [],
     records: [],
     record: {},
   },
