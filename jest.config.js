@@ -8,6 +8,15 @@ module.exports = {
   // files for which coverage information should be collected
   collectCoverageFrom: ['src/**/*.{js,jsx,mjs}'],
 
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'public',
+    'src/utils',
+    'src/components/container/CloudinaryWidget',
+    'src/redux/store',
+    'src/routes',
+  ],
+
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
 
