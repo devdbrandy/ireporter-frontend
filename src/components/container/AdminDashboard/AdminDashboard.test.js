@@ -1,9 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Modal from 'react-modal';
-import { Dashboard } from './index';
-
-jest.mock('react-modal');
+import { AdminDashboard } from './index';
 
 /**
  * Wrapper for enzyme shallow component
@@ -12,21 +9,19 @@ jest.mock('react-modal');
  */
 const setup = () => {
   const props = {
-    userId: 1,
-    records: [],
-    fetchRecords: jest.fn(),
-    deleteRecord: jest.fn(),
     isAdmin: false,
+    fetchRecords: jest.fn(),
+    records: [],
+    deleteRecord: jest.fn(),
+    updateStatus: jest.fn(),
   };
 
-  const component = shallow(<Dashboard {...props} />);
+  const component = shallow(<AdminDashboard {...props} />);
   return { props, component };
 };
 
-describe('<Dashboard />', () => {
+describe('<AdminDashboard />', () => {
   it('renders without crashing given the required props', () => {
-    Modal.setAppElement.mockImplementation(() => null);
-
     const { component } = setup();
     expect(component).toMatchSnapshot();
   });

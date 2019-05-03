@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Record /> renders without crashing given the required props 1`] = `
+<div
+  className="card"
+  onClick={[Function]}
+>
+  <div
+    className="record-cover"
+  >
+    <img
+      alt="cover"
+    />
+    <div
+      className="overlay"
+    />
+    <span
+      className="author"
+    >
+      By:
+       
+      <span
+        className="name"
+      >
+        john doe
+      </span>
+    </span>
+    <span
+      className="tag tag-intervention"
+    />
+  </div>
+  <div
+    className="record-body"
+  >
+    <h4
+      className="record-title"
+    />
+    <p />
+    <span
+      className="location"
+    >
+      <i
+        className="fas fa-map-marker-alt"
+      />
+    </span>
+  </div>
+  <div
+    className="record-status"
+  />
+</div>
+`;

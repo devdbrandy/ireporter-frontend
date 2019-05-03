@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AdminDashboard /> renders without crashing given the required props 1`] = `
+<Redirect
+  to="/dashboard"
+/>
+`;
