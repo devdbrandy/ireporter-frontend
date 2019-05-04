@@ -50,7 +50,7 @@ Ensure that you have the following installed on your local machine:
 
 ### 1.2. Run locally
 
-- To run app locally, make sure you have `nodejs`, `postgres` installed.
+- To run app locally, make sure you have `nodejs` installed.
 - Clone repository or clone your own fork
 
   ```bash
@@ -60,18 +60,8 @@ Ensure that you have the following installed on your local machine:
     npm install
   ```
 
-- Create a PostgreSQL database for the project via `pgAdmin` or run the below command on your terminal:
-
-    ```bash
-      createdb -h localhost -p 5432 -U postgres ireporter
-    ```
-
 - Configure `.env` environment variable with your credentials
-- Run migration `npm run migrate`
-- (Optional) Seed dummy data `npm run db:seed`
-- Two npm scripts are availiable to spin up the app server:
-  - `npm run dev` spin up the server without watching for any file changes
-  - `npm run watch` watches for any file changes and reloads the server
+- Run `npm run dev` to spin up the development server (supports Hot Reload)
 
 ### 1.3. Building
 
