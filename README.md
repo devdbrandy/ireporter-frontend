@@ -29,24 +29,24 @@ iReporter app enables users (citizen) to bring any form of corruption to the not
 <!-- TOC depthFrom:2 -->
 
 - [Overview](#overview)
-- [1. :rocket: Getting Started](#1-rocket-getting-started)
-  - [1.1 Prerequisites](#11-prerequisites)
-  - [1.2. Run locally](#12-run-locally)
-  - [1.3. Building](#13-building)
-  - [1.4. Running Test](#14-running-test)
-- [2. :pencil: License](#2-pencil-license)
+- [:rocket: Getting Started](#1-rocket-getting-started)
+  - [Prerequisites](#11-prerequisites)
+  - [Run locally](#12-run-locally)
+  - [Building](#13-building)
+  - [Running Test](#14-running-test)
+- [:pencil: License](#2-pencil-license)
 
 <!-- /TOC -->
 
-## 1. :rocket: Getting Started
+## :rocket: Getting Started
 
-### 1.1 Prerequisites
+### Prerequisites
 
 Ensure that you have the following installed on your local machine:
 
 - [NodeJS](https://nodejs.org/en/download/)
 
-### 1.2. Run locally
+### Run locally
 
 - To run app locally, make sure you have `nodejs` installed.
 - Clone repository or clone your own fork
@@ -61,11 +61,11 @@ Ensure that you have the following installed on your local machine:
 - Configure `.env` environment variable with your credentials
 - Run `npm run dev` to spin up the development server (supports Hot Reload)
 
-### 1.3. Building
+### Building
 
 `npm run build`
 
-### 1.4. Running Test
+### Running Test
 
 Make a duplicate of `.env.example` and rename to `.env.test`, then configure your test credentials.
 
@@ -74,6 +74,6 @@ Two npm scripts are available to run the test suite:
 1. `npm run test:watch` - Watches for any file changes and runs the full test suite (without code coverage)
 2. `npm test` - Performs a single full test suite run, including instanbul code coverage reporting. Summary coverage reports are written to stdout, and detailed HTML reports are available in `/coverage/index.html`
 
-## 2. :pencil: License
+## :pencil: License
 
 The iReporter REST API is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
