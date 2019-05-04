@@ -46,7 +46,6 @@ iReporter app enables users (citizen) to bring any form of corruption to the not
 Ensure that you have the following installed on your local machine:
 
 - [NodeJS](https://nodejs.org/en/download/)
-- [PostgreSQL](https://www.postgresql.org/download/)
 
 ### 1.2. Run locally
 
