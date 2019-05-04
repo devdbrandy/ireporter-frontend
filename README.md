@@ -28,14 +28,13 @@ iReporter app enables users (citizen) to bring any form of corruption to the not
 
 <!-- TOC depthFrom:2 -->
 
-- [iReporter Frontend App](#ireporter-frontend-app)
 - [Overview](#overview)
-  - [1. :rocket: Getting Started](#1-rocket-getting-started)
-    - [1.1 Prerequisites](#11-prerequisites)
-    - [1.2. Run locally](#12-run-locally)
-    - [1.3. Building](#13-building)
-    - [1.4. Running Test](#14-running-test)
-  - [2. :pencil: License](#2-pencil-license)
+- [1. :rocket: Getting Started](#1-rocket-getting-started)
+  - [1.1 Prerequisites](#11-prerequisites)
+  - [1.2. Run locally](#12-run-locally)
+  - [1.3. Building](#13-building)
+  - [1.4. Running Test](#14-running-test)
+- [2. :pencil: License](#2-pencil-license)
 
 <!-- /TOC -->
 
