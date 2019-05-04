@@ -10,6 +10,7 @@ import { Profile } from './index';
 function setup() {
   const props = {
     user: {},
+    overview: {},
   };
 
   const component = shallow(<Profile {...props} />);

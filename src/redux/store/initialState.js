@@ -15,6 +15,11 @@ export default {
     userRecords: [],
     records: [],
     record: {},
-    overview: {}
+    overview: {
+      total: 0,
+      'under-investigation': 0,
+      resolved: 0,
+      rejected: 0,
+    }
   },
 };

@@ -11,7 +11,7 @@ export default (state = records, { type, payload }) => {
       return {
         ...state,
         userRecords: payload,
-        overview: generateOverview(payload),
+        overview: { ...generateOverview(payload) },
       };
     case fetchRecordsType.success:
       return {

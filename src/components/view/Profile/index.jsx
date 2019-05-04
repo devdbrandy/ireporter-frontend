@@ -13,7 +13,8 @@ export const Profile = (props) => {
       bio,
       avatar,
       registered,
-    }
+    },
+    overview,
   } = props;
   const joinDate = moment(registered).format('MMM Do, YYYY');
   return (
@@ -50,15 +51,24 @@ export const Profile = (props) => {
                         </span>
                         <hr className="dash" />
                         <span>
-                          <i className="incident-total">0</i>
+                          <i className="incident-total">
+                            {overview.total}
+                          </i>
+                          {' '}
                           Incidents Published
                         </span>
                         <span>
-                          <i className="incident-resolved">0</i>
+                          <i className="incident-resolved">
+                            {overview.resolved}
+                          </i>
+                          {' '}
                           Incidents Resolved
                         </span>
                         <span>
-                          <i className="incident-rejected">0</i>
+                          <i className="incident-rejected">
+                            {overview.rejected}
+                          </i>
+                          {' '}
                           Incidents Rejected
                         </span>
                       </div>
@@ -76,10 +86,12 @@ export const Profile = (props) => {
 
 Profile.propTypes = {
   user: PropType.object.isRequired,
+  overview: PropType.object.isRequired,
 };
 
 const mapStateToProps = state => ({
   user: state.auth.user,
+  overview: state.records.overview,
 });
 
 export default connect(mapStateToProps)(Profile);

@@ -91,19 +91,19 @@ export const AdminDashboard = (props) => {
             <div className="row">
               <div className="card column">
                 <span className="count" id="total-records">
-                  {overview.total || 0}
+                  {overview.total}
                 </span>
                 <h5>Total Records</h5>
               </div>
               <div className="card column">
                 <span className="count" id="resolved-count">
-                  {overview.resolved || 0}
+                  {overview.resolved}
                 </span>
                 <h5>Resolved</h5>
               </div>
               <div className="card column">
                 <span className="count" id="investigation-count">
-                  {overview['under-investigation'] || 0}
+                  {overview['under-investigation']}
                 </span>
                 <h5>Under Investigation</h5>
               </div>

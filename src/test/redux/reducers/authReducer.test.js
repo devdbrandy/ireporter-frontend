@@ -1,5 +1,5 @@
 import authReducer from '../../../redux/reducers/authReducer';
-import { loginType } from '../../../redux/actions/authAction';
+import { loginType, logoutType } from '../../../redux/actions/authAction';
 import { mockState } from '../../support/setup';
 
 const initialState = mockState.auth;
@@ -50,6 +50,17 @@ describe('Profile Reducer', () => {
     const expected = {
       ...initialState,
       errors: [error],
+    };
+    expect(result).toEqual(expected);
+  });
+  it('should handle user logout', () => {
+    const action = { type: logoutType.success };
+    const result = authReducer(initialState, action);
+    const expected = {
+      ...initialState,
+      isAuthenticated: false,
+      token: '',
+      user: {},
     };
     expect(result).toEqual(expected);
   });

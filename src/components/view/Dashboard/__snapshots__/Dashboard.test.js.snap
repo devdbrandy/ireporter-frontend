@@ -18,9 +18,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
             <span
               className="count"
               id="total-records"
-            >
-              0
-            </span>
+            />
             <h5>
               Total Records
             </h5>
@@ -31,9 +29,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
             <span
               className="count"
               id="investigation-count"
-            >
-              0
-            </span>
+            />
             <h5>
               Under investigation
             </h5>
@@ -44,9 +40,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
             <span
               className="count"
               id="resolved-count"
-            >
-              0
-            </span>
+            />
             <h5>
               Resolved
             </h5>
@@ -57,9 +51,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
             <span
               className="count"
               id="rejected-count"
-            >
-              0
-            </span>
+            />
             <h5>
               Rejected
             </h5>

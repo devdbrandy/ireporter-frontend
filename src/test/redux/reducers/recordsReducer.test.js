@@ -6,6 +6,9 @@ import { mockState } from '../../support/setup';
 const initialState = mockState.records;
 
 describe('Records Reducer', () => {
+  it('should return the initial state', () => {
+    expect(recordsReducer(initialState, {})).toEqual(initialState);
+  });
   it('should handle fetch record success', () => {
     const action = {
       type: fetchUserRecordsType.success,
@@ -39,14 +42,15 @@ describe('Records Reducer', () => {
     expect(result).toEqual(expected);
   });
   it('should handle delete record success', () => {
+    initialState.userRecords = [{ id: 1 }, { id: 2 }];
     const action = {
       type: deleteRecordType.success,
-      payload: []
+      payload: 1,
     };
     const result = recordsReducer(initialState, action);
     const expected = {
       ...initialState,
-      userRecords: [],
+      userRecords: [{ id: 2 }],
     };
     expect(result).toEqual(expected);
   });

@@ -78,25 +78,22 @@ Object {
                       <span>
                         <i
                           className="incident-total"
-                        >
-                          0
-                        </i>
+                        />
+                         
                         Incidents Published
                       </span>
                       <span>
                         <i
                           className="incident-resolved"
-                        >
-                          0
-                        </i>
+                        />
+                         
                         Incidents Resolved
                       </span>
                       <span>
                         <i
                           className="incident-rejected"
-                        >
-                          0
-                        </i>
+                        />
+                         
                         Incidents Rejected
                       </span>
                     </div>
@@ -110,6 +107,7 @@ Object {
     </Layout>
   </Fragment>,
   "props": Object {
+    "overview": Object {},
     "user": Object {},
   },
 }
