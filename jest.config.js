@@ -15,6 +15,7 @@ module.exports = {
     'src/components/container/CloudinaryWidget',
     'src/redux/store',
     'src/routes',
+    process.env.CC_TEST_PATH,
   ],
 
   // The directory where Jest should output its coverage files

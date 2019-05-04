@@ -14,6 +14,17 @@ export const createMockStore = () => {
   return mockStore;
 };
 
+export const contextWrapper = (component, store = initialState) => {
+  const mockStore = configMockStore([thunk]);
+  return (
+    <Provider store={mockStore(store)}>
+      <BrowserRouter>
+        {component}
+      </BrowserRouter>
+    </Provider>
+  );
+};
+
 const setup = (component, store = initialState) => {
   const mockStore = configMockStore([thunk]);
   const connectedWrapper = mount(
