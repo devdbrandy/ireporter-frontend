@@ -1,19 +1,30 @@
-# iReporter Frontend App
+<h1 align="center">iReporter<h1>
 
-[![CircleCI](https://circleci.com/gh/devdbrandy/ireporter-frontend.svg?style=svg)](https://circleci.com/gh/devdbrandy/ireporter-frontend) [![Maintainability](https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/maintainability)](https://codeclimate.com/github/devdbrandy/ireporter-frontend/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/test_coverage)](https://codeclimate.com/github/devdbrandy/ireporter-frontend/test_coverage)
+<p align="center">
+  <a href="https://circleci.com/gh/devdbrandy/ireporter-frontend">
+    <img src="https://circleci.com/gh/devdbrandy/ireporter-frontend.svg?style=svg"></a>
+  <a class="badge-align" href="https://www.codacy.com/app/devdbrandy/ireporter-frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=devdbrandy/ireporter-frontend&amp;utm_campaign=Badge_Grade">
+  <img src="https://api.codacy.com/project/badge/Grade/af41b75a4052458888f44cd39007295a"/></a>
+  <a href="https://codeclimate.com/github/devdbrandy/ireporter-frontend/maintainability"><img src="https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/maintainability" /></a>
+  <a href="https://codeclimate.com/github/devdbrandy/iReporter/test_coverage"><img src="https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/test_coverage" /></a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"></a>
+</p>
 
-# Overview
+## Overview
 
 iReporter app enables users (citizen) to bring any form of corruption to the notice of appropriate authorities and the general public. Visit iReporter live demo: [https://irepot-frontend.herokuapp.com](https://irepot-frontend.herokuapp.com).
 
 ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/30989030/56726768-54874180-6747-11e9-9014-6050c2ec003a.gif)
 
->Demo Users
->
->| Username  | Password | Access       |
->|-----------|----------|--------------|
->| `admin`   | `secret` | Admin Access |
->| `user123` | `secret` | User Access  |
+<details>
+<summary><code>Demo Users (Try It Out <> Click me! 😋)</code></summary>
+
+| Username  | Password | Access       |
+|-----------|----------|--------------|
+| `admin`   | `secret` | Admin Access |
+| `user123` | `secret` | User Access  |
+</details>
 
 <!-- TOC depthFrom:2 -->
 
