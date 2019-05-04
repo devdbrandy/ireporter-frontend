@@ -4,106 +4,83 @@ exports[`<Profile /> renders without crashing given the required props 1`] = `
 Object {
   "component": <Fragment>
     <Layout>
-      <div
-        className="container"
+      <withRouter(Panel)
+        title="Profile"
       >
-        <main
-          id="main"
+        <div
+          className="user-profile row middle"
         >
           <div
-            className="column"
+            className="user--avatar column center"
+          >
+            <img
+              alt="avatar"
+            />
+          </div>
+          <div
+            className="user--detail column center"
+          >
+            <h3>
+               
+            </h3>
+            <Link
+              className="btn btn-primary edit"
+              to="/settings"
+            >
+              Edit Profile
+            </Link>
+            <hr
+              className="dash"
+            />
+            <p
+              className="user--bio"
+            >
+              No bio provided.
+            </p>
+          </div>
+          <div
+            className="user--stat column center text-center"
           >
             <div
-              className="panel"
+              className="wrapper"
             >
-              <div
-                className="panel--heading"
-              >
-                <h3>
-                  Profile
-                </h3>
-              </div>
-              <div
-                className="panel--body"
-              >
-                <div
-                  className="user-profile row middle"
+              <span>
+                Joined:
+                 
+                <i
+                  className="user--registered"
                 >
-                  <div
-                    className="user--avatar column center"
-                  >
-                    <img
-                      alt="avatar"
-                    />
-                  </div>
-                  <div
-                    className="user--detail column center"
-                  >
-                    <h3>
-                       
-                    </h3>
-                    <Link
-                      className="btn btn-primary edit"
-                      to="/settings"
-                    >
-                      Edit Profile
-                    </Link>
-                    <hr
-                      className="dash"
-                    />
-                    <p
-                      className="user--bio"
-                    >
-                      No bio provided.
-                    </p>
-                  </div>
-                  <div
-                    className="user--stat column center text-center"
-                  >
-                    <div
-                      className="wrapper"
-                    >
-                      <span>
-                        Joined:
-                         
-                        <i
-                          className="user--registered"
-                        >
-                          May 3rd, 2019
-                        </i>
-                      </span>
-                      <hr
-                        className="dash"
-                      />
-                      <span>
-                        <i
-                          className="incident-total"
-                        />
-                         
-                        Incidents Published
-                      </span>
-                      <span>
-                        <i
-                          className="incident-resolved"
-                        />
-                         
-                        Incidents Resolved
-                      </span>
-                      <span>
-                        <i
-                          className="incident-rejected"
-                        />
-                         
-                        Incidents Rejected
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  May 4th, 2019
+                </i>
+              </span>
+              <hr
+                className="dash"
+              />
+              <span>
+                <i
+                  className="incident-total"
+                />
+                 
+                Incidents Published
+              </span>
+              <span>
+                <i
+                  className="incident-resolved"
+                />
+                 
+                Incidents Resolved
+              </span>
+              <span>
+                <i
+                  className="incident-rejected"
+                />
+                 
+                Incidents Rejected
+              </span>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </withRouter(Panel)>
     </Layout>
   </Fragment>,
   "props": Object {

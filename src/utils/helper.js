@@ -41,3 +41,23 @@ export const generateOverview = (records) => {
   localStorage.setItem('overview', JSON.stringify(overview));
   return overview;
 };
+
+/**
+ * Fetche and display location to map
+ *
+ * @param {string} location - The location cordinates
+ * @returns {void}
+ */
+export const mapLocation = (location) => {
+  const [lat, lng] = location.split(',');
+  const latLng = {
+    lat: parseFloat(lat),
+    lng: parseFloat(lng),
+  };
+  const mapContainer = document.getElementById('map');
+  // eslint-disable-next-line no-unused-vars
+  const map = new google.maps.Map(mapContainer, {
+    center: latLng,
+    zoom: 13,
+  });
+};

@@ -10,6 +10,7 @@ import { fetchUserRecords } from '../../../redux/actions/recordsAction';
 import { deleteRecordAction } from '../../../redux/actions/recordAction';
 import formatDate from '../../../utils/formatDate';
 import lookupAddress from '../../../utils/lookupAddress';
+import { mapLocation } from '../../../utils/helper';
 
 Modal.setAppElement('#root');
 
@@ -83,17 +84,7 @@ export const Dashboard = (props) => {
    */
   const afterModalOpen = async () => {
     const { record: { location } } = state;
-    const [lat, lng] = location.split(',');
-    const latLng = {
-      lat: parseFloat(lat),
-      lng: parseFloat(lng),
-    };
-    const mapContainer = document.getElementById('map');
-    // eslint-disable-next-line no-unused-vars
-    const map = new google.maps.Map(mapContainer, {
-      center: latLng,
-      zoom: 13,
-    });
+    mapLocation(location); // display location on map
     const address = await lookupAddress(location);
     setState({
       ...state,

@@ -3,267 +3,244 @@
 exports[`<Settings /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
-    <div
-      className="container"
+    <withRouter(Panel)
+      title="Settings"
     >
-      <main
-        id="main"
+      <form
+        id="settings-form"
+        onSubmit={[Function]}
       >
         <div
-          className="column"
+          className="form-control"
         >
           <div
-            className="panel"
+            className="col-2"
+          >
+            <label
+              htmlFor="username"
+            >
+              Username
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <input
+              disabled={true}
+              id="username"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="email"
+            >
+              Email Address
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <input
+              disabled={true}
+              id="email"
+              type="email"
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="firstname"
+            >
+              Name
+            </label>
+          </div>
+          <div
+            className="col-10"
           >
             <div
-              className="panel--heading"
+              className="row"
             >
-              <h3>
-                Settings
-              </h3>
+              <div
+                className="column pr-4"
+              >
+                <input
+                  id="firstname"
+                  name="firstname"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </div>
+              <div
+                className="column pl-4 pr-4"
+              >
+                <input
+                  id="lastname"
+                  name="lastname"
+                  onChange={[Function]}
+                  type="text"
+                />
+              </div>
             </div>
             <div
-              className="panel--body"
+              className="row"
             >
-              <form
-                id="settings-form"
-                onSubmit={[Function]}
-              >
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <input
-                      disabled={true}
-                      id="username"
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="email"
-                    >
-                      Email Address
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <input
-                      disabled={true}
-                      id="email"
-                      type="email"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="firstname"
-                    >
-                      Name
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <div
-                      className="row"
-                    >
-                      <div
-                        className="column pr-4"
-                      >
-                        <input
-                          id="firstname"
-                          name="firstname"
-                          onChange={[Function]}
-                          type="text"
-                        />
-                      </div>
-                      <div
-                        className="column pl-4 pr-4"
-                      >
-                        <input
-                          id="lastname"
-                          name="lastname"
-                          onChange={[Function]}
-                          type="text"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className="row"
-                    >
-                      <input
-                        id="othernames"
-                        name="othernames"
-                        onChange={[Function]}
-                        placeholder="Other names"
-                        type="text"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="phonenumber"
-                    >
-                      Phone number
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <input
-                      id="phonenumber"
-                      name="phoneNumber"
-                      onChange={[Function]}
-                      type="text"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="bio"
-                    >
-                      Summary (Bio)
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <textarea
-                      id="bio"
-                      name="bio"
-                      onChange={[Function]}
-                      placeholder="a short bio of yourself"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="title"
-                    >
-                      Profile Image
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <div
-                      className="row middle"
-                    >
-                      <div
-                        className="profile-image"
-                      >
-                        <img
-                          alt="avatar"
-                        />
-                      </div>
-                      <input
-                        id="avatar"
-                        name="avatar"
-                        type="hidden"
-                      />
-                      <button
-                        className="btn btn-primary btn-sm ml-20"
-                        id="upload-avatar"
-                        type="button"
-                      >
-                        Upload avatar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="form-control"
-                >
-                  <div
-                    className="col-2"
-                  >
-                    <label
-                      htmlFor="gender"
-                    >
-                      Gender
-                    </label>
-                  </div>
-                  <div
-                    className="col-10"
-                  >
-                    <label>
-                      <input
-                        checked={false}
-                        name="gender"
-                        onChange={[Function]}
-                        type="radio"
-                        value="male"
-                      />
-                      Male
-                    </label>
-                    <label>
-                      <input
-                        checked={false}
-                        name="gender"
-                        onChange={[Function]}
-                        type="radio"
-                        value="female"
-                      />
-                      Female
-                    </label>
-                  </div>
-                </div>
-                <div
-                  className="row center mt-60"
-                >
-                  <button
-                    className="btn btn-primary"
-                    type="submit"
-                  >
-                    Save Settings
-                  </button>
-                </div>
-              </form>
+              <input
+                id="othernames"
+                name="othernames"
+                onChange={[Function]}
+                placeholder="Other names"
+                type="text"
+              />
             </div>
           </div>
         </div>
-      </main>
-    </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="phonenumber"
+            >
+              Phone number
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <input
+              id="phonenumber"
+              name="phoneNumber"
+              onChange={[Function]}
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="bio"
+            >
+              Summary (Bio)
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <textarea
+              id="bio"
+              name="bio"
+              onChange={[Function]}
+              placeholder="a short bio of yourself"
+            />
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="title"
+            >
+              Profile Image
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <div
+              className="row middle"
+            >
+              <div
+                className="profile-image"
+              >
+                <img
+                  alt="avatar"
+                />
+              </div>
+              <input
+                id="avatar"
+                name="avatar"
+                type="hidden"
+              />
+              <button
+                className="btn btn-primary btn-sm ml-20"
+                id="upload-avatar"
+                type="button"
+              >
+                Upload avatar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          className="form-control"
+        >
+          <div
+            className="col-2"
+          >
+            <label
+              htmlFor="gender"
+            >
+              Gender
+            </label>
+          </div>
+          <div
+            className="col-10"
+          >
+            <label>
+              <input
+                checked={false}
+                name="gender"
+                onChange={[Function]}
+                type="radio"
+                value="male"
+              />
+              Male
+            </label>
+            <label>
+              <input
+                checked={false}
+                name="gender"
+                onChange={[Function]}
+                type="radio"
+                value="female"
+              />
+              Female
+            </label>
+          </div>
+        </div>
+        <div
+          className="row center mt-60"
+        >
+          <button
+            className="btn btn-primary"
+            type="submit"
+          >
+            Save Settings
+          </button>
+        </div>
+      </form>
+    </withRouter(Panel)>
   </Layout>
 </Fragment>
 `;
