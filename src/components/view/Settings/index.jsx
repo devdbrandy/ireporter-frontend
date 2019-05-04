@@ -42,7 +42,7 @@ export const Settings = (props) => {
     <>
       <Layout>
         <Panel title="Settings">
-          <form id="settings-form" onSubmit={handleFormSubmit}>
+          <form id="settings-form" onSubmit={handleFormSubmit} data-testid="editForm">
             <div className="form-control">
               <div className="col-2">
                 <label htmlFor="username">Username</label>
