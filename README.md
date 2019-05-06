@@ -3,8 +3,6 @@
 <p align="center">
   <a href="https://circleci.com/gh/devdbrandy/ireporter-frontend">
     <img src="https://circleci.com/gh/devdbrandy/ireporter-frontend.svg?style=svg"></a>
-  <a class="badge-align" href="https://www.codacy.com/app/devdbrandy/ireporter-frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=devdbrandy/ireporter-frontend&amp;utm_campaign=Badge_Grade">
-  <img src="https://api.codacy.com/project/badge/Grade/af41b75a4052458888f44cd39007295a"/></a>
   <a href="https://codeclimate.com/github/devdbrandy/ireporter-frontend/maintainability"><img src="https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/maintainability" /></a>
   <a href="https://codeclimate.com/github/devdbrandy/ireporter-frontend/test_coverage"><img src="https://api.codeclimate.com/v1/badges/4ea779147d454d8fa543/test_coverage" /></a>
   <a href="https://opensource.org/licenses/MIT">
