@@ -67,8 +67,6 @@ Ensure that you have the following installed on your local machine:
 
 ### Running Test
 
-Make a duplicate of `.env.example` and rename to `.env.test`, then configure your test credentials.
-
 Two npm scripts are available to run the test suite:
 
 1. `npm run test:watch` - Watches for any file changes and runs the full test suite (without code coverage)
