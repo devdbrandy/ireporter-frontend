@@ -55,7 +55,7 @@ Ensure that you have the following installed on your local machine:
 - Navigate into the project directory: `cd ireporter-frontend`
 - Run `npm install` to install required dependencies
 - Make a duplicate of `.env.example` and rename it to `.env`
-- Configure `.env` environment variable with your credentials
+- Configure `.env` environment variable with the required credentials
 - Run `npm run dev` to spin up the development server (supports Hot Reload)
 
 ### Building
