@@ -48,22 +48,21 @@ Ensure that you have the following installed on your local machine:
 
 ### Run locally
 
-- To run app locally, make sure you have `nodejs` installed.
 - Clone repository or clone your own fork
 
   ```bash
     git clone https://github.com/devdbrandy/ireporter-frontend.git
-    cd ireporter-frontendireporter-frontend
-    cp .env.example .env
-    npm install
   ```
 
+- Navigate into the project directory: `cd ireporter-frontend`
+- Run `npm install` to install required dependencies
+- Make a duplicate of `.env.example` and rename it to `.env`
 - Configure `.env` environment variable with your credentials
 - Run `npm run dev` to spin up the development server (supports Hot Reload)
 
 ### Building
 
-`npm run build`
+Run `npm run build` on your terminal to build the app
 
 ### Running Test
 
