@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BrowseRecords /> renders without crashing given the required props 1`] = `
+exports[`<BrowseReports /> renders without crashing given the required props 1`] = `
 <Fragment>
   <Layout>
     <withRouter(Panel)
-      title="Browse Records"
+      title="Browse Reports"
     >
       <div
         className="records-list"

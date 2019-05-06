@@ -27,7 +27,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const BrowseRecords = (props) => {
+export const BrowseReports = (props) => {
   const { fetchRecords, records } = props;
   const [state, setState] = useState({
     fetchedRecords: false,
@@ -87,7 +87,7 @@ export const BrowseRecords = (props) => {
   return (
     <>
       <Layout>
-        <Panel title="Browse Records">
+        <Panel title="Browse Reports">
           <div className="records-list">
             <div className="row">
               {(records.length > 0) ? (
@@ -154,7 +154,7 @@ export const BrowseRecords = (props) => {
   );
 };
 
-BrowseRecords.propTypes = {
+BrowseReports.propTypes = {
   records: PropTypes.array.isRequired,
   fetchRecords: PropTypes.func.isRequired,
 };
@@ -167,4 +167,4 @@ const mapDispatchToProps = ({
   fetchRecords: published => fetchRecordsAction(published),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BrowseRecords);
+export default connect(mapStateToProps, mapDispatchToProps)(BrowseReports);

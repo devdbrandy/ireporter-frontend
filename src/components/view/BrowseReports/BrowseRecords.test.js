@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Modal from 'react-modal';
-import { BrowseRecords } from './index';
+import { BrowseReports } from './index';
 
 jest.mock('react-modal');
 
@@ -16,11 +16,11 @@ const setup = () => {
     fetchRecords: jest.fn(),
   };
 
-  const component = shallow(<BrowseRecords {...props} />);
+  const component = shallow(<BrowseReports {...props} />);
   return { props, component };
 };
 
-describe('<BrowseRecords />', () => {
+describe('<BrowseReports />', () => {
   it('renders without crashing given the required props', () => {
     Modal.setAppElement.mockImplementation(() => null);
 

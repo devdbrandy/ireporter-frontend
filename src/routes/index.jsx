@@ -8,7 +8,7 @@ import ProfileComponent from '../components/view/Profile';
 import SettingsComponent from '../components/view/Settings';
 import NewRecordComponent from '../components/view/NewRecord';
 import EditRecordComponent from '../components/view/EditRecord';
-import BrowseRecordsComponent from '../components/view/BrowseRecords';
+import BrowseReportsComponent from '../components/view/BrowseReports';
 import ProtectedRoute from '../components/container/ProtectedRoute';
 
 const Routes = () => (
@@ -22,7 +22,7 @@ const Routes = () => (
       <ProtectedRoute path="/settings" component={SettingsComponent} />
       <ProtectedRoute path="/new/record" component={NewRecordComponent} />
       <ProtectedRoute path="/edit/record/:id" component={EditRecordComponent} />
-      <ProtectedRoute path="/browse" component={BrowseRecordsComponent} />
+      <ProtectedRoute path="/browse" component={BrowseReportsComponent} />
     </Switch>
   </Router>
 );
