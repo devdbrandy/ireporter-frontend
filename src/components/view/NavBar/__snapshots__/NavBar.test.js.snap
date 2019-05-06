@@ -35,14 +35,11 @@ exports[`<NavBar /> renders without crashing given the required props 1`] = `
               className="btn btn-secondary"
               to="/browse"
             >
-              <i
-                className="fas fa-search"
-              />
-              Browse
+              View reports
               <span
                 className="text"
               >
-                 Records
+                 By Other users
               </span>
             </Link>
             <Link

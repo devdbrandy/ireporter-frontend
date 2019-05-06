@@ -147,7 +147,7 @@ export const Dashboard = (props) => {
             <table id="records-table">
               <thead>
                 <tr>
-                  <th>Title</th>
+                  <th>Record Title</th>
                   <th>Type</th>
                   <th>Created On</th>
                   <th>Status</th>
@@ -155,7 +155,7 @@ export const Dashboard = (props) => {
                 </tr>
               </thead>
               <tbody id="record-list">
-                {records.map(record => (
+                {records.length > 0 ? records.map(record => (
                   <tr key={record.id}>
                     <td className="title">{record.title}</td>
                     <td><span className={`tag tag-${record.type}`}>{record.type}</span></td>
@@ -184,7 +184,18 @@ export const Dashboard = (props) => {
                       </div>
                     </td>
                   </tr>
-                ))}
+                ))
+                  : (
+                    <tr>
+                      <td colSpan="4">
+                        <div align="center">
+                          You have no records yet.
+                          {' '}
+                          <Link to="/new/record" className="btn btn-success btn-sm">Create New Record</Link>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
               </tbody>
             </table>
           </div>

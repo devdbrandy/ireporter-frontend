@@ -111,7 +111,7 @@ export const EditRecord = (props) => {
     event.preventDefault();
     const { updateRecord } = props;
     const { type, id } = state;
-    updateRecord(type, id, state);
+    updateRecord(type, id, state, props);
   };
 
   /**
@@ -328,7 +328,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = ({
-  updateRecord: (type, id, payload) => updateRecordAction(type, id, payload),
+  updateRecord: (type, id, payload, props) => updateRecordAction(type, id, payload, props),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditRecord);

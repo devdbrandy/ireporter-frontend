@@ -50,9 +50,10 @@ export const createRecordAction = (type, body, ownProps) => async (dispatch) => 
  * @param {string} type - The record type
  * @param {number} id - The record id
  * @param {object} body - The record payload
+ * @param {object} ownProps - The components props
  * @returns {void}
  */
-export const updateRecordAction = (type, id, body) => async (dispatch) => {
+export const updateRecordAction = (type, id, body, ownProps) => async (dispatch) => {
   dispatch(commonLoading(true));
   try {
     const response = await makeRequest(`/api/v1/${type}s/${id}`, {
@@ -60,6 +61,7 @@ export const updateRecordAction = (type, id, body) => async (dispatch) => {
       body,
     });
     const { message } = response.data.data[0];
+    ownProps.history.push('/dashboard');
     toast.success(message);
     dispatch(commonLoading(false));
   } catch (error) {

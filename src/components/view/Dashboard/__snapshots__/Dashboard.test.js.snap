@@ -70,7 +70,7 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
           <thead>
             <tr>
               <th>
-                Title
+                Record Title
               </th>
               <th>
                 Type
@@ -86,7 +86,26 @@ exports[`<Dashboard /> renders without crashing given the required props 1`] = `
           </thead>
           <tbody
             id="record-list"
-          />
+          >
+            <tr>
+              <td
+                colSpan="4"
+              >
+                <div
+                  align="center"
+                >
+                  You have no records yet.
+                   
+                  <Link
+                    className="btn btn-success btn-sm"
+                    to="/new/record"
+                  >
+                    Create New Record
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div

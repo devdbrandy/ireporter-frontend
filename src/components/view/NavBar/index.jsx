@@ -25,9 +25,9 @@ export const NavBar = (props) => {
             <div className="column">
               <div className="navbar--right row middle">
                 <Link to="/browse" className="btn btn-secondary">
-                  <i className="fas fa-search" />
-                  Browse
-                  <span className="text"> Records</span>
+                  {/* <i className="fas fa-search" /> */}
+                  View reports
+                  <span className="text"> By Other users</span>
                 </Link>
                 <Link to="/new/record" className="btn btn-secondary add-button">
                   <i className="fas fa-plus" />
