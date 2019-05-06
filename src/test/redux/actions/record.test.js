@@ -60,6 +60,9 @@ describe('Action creators', () => {
     });
   });
   it('updateRecordAction() should dispatch loading', () => {
+    const props = {
+      history: { push: jest.fn() }
+    };
     request.mockResolvedValue({
       data: {
         data: [{ message: 'success message' }]
@@ -76,11 +79,11 @@ describe('Action creators', () => {
       },
     ];
     const store = mockStore();
-    return store.dispatch(actions.updateRecordAction('red-flags', 1, {})).then(() => {
+    return store.dispatch(actions.updateRecordAction('red-flags', 1, {}, props)).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });
-  it('createRecordAction() should dispatch failure', () => {
+  it('updateRecordAction() should dispatch failure', () => {
     const response = {
       data: {
         error: 'error message'

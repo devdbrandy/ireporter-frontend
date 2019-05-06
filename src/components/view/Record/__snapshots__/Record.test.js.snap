@@ -26,6 +26,19 @@ exports[`<Record /> renders without crashing given the required props 1`] = `
       </span>
     </span>
     <span
+      style={
+        Object {
+          "bottom": 0,
+          "fontSize": "1.2rem",
+          "padding": "5px",
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+    >
+      06-05-2019
+    </span>
+    <span
       className="tag tag-intervention"
     />
   </div>

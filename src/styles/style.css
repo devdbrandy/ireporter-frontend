@@ -919,6 +919,10 @@ span.location {
 }
 /* ----- END RECORD MODAL VIEW */
 
+.responsive-table thead {
+  border-bottom: 1px solid #ddd;
+}
+
 
 /* ----- MEDIA QUERIES ----- */
 

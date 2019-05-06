@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import lookupAddress from '../../../utils/lookupAddress';
+import formatDate from '../../../utils/formatDate';
+
+const timeStampStyle = {
+  position: 'absolute',
+  bottom: 0,
+  right: 0,
+  padding: '5px',
+  fontSize: '1.2rem',
+};
 
 const Record = ({ record, openModal }) => {
   const { author, images } = record;
@@ -25,6 +34,9 @@ const Record = ({ record, openModal }) => {
           By:
           {' '}
           <span className="name">{`${author.firstname} ${author.lastname}`}</span>
+        </span>
+        <span style={timeStampStyle}>
+          {formatDate(record.createdOn)}
         </span>
         <span className="tag tag-intervention">{record.type}</span>
       </div>
