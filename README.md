@@ -67,7 +67,7 @@ Run `npm run build` on your terminal to build the app
 Two npm scripts are available to run the test suite:
 
 1. `npm run test:watch` - Watches for any file changes and runs the full test suite (without code coverage)
-2. `npm test` - Performs a single full test suite run, including instanbul code coverage reporting. Summary coverage reports are written to stdout, and detailed HTML reports are available in `/coverage/index.html`
+2. `npm test` - Performs a single full test suite run, including instanbul code coverage reporting. Summary coverage reports are written to stdout, and detailed HTML reports are available in `/coverage/lcov-report/index.html`
 
 ## :pencil: License
 
